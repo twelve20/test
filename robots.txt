@@ -1,0 +1,88 @@
+# robots.txt для сайта ColorVivo.ru
+# Обновлено: 15.05.2024
+
+User-agent: *
+Allow: /
+Allow: /sitemap.xml
+Allow: /images/
+Allow: /img/
+Allow: /css/
+Allow: /js/
+Allow: /fonts/
+Allow: /products/
+Allow: /gallery/
+Allow: /testimonials/
+Allow: /contacts/
+Allow: /faq/
+Allow: /blog/
+
+# Запрет на индексацию служебных директорий
+Disallow: /admin/
+Disallow: /cgi-bin/
+Disallow: /wp-admin/
+Disallow: /wp-includes/
+Disallow: /wp-content/plugins/
+Disallow: /wp-content/themes/
+Disallow: /order-modal/
+Disallow: /tmp/
+Disallow: /test/
+Disallow: /dev/
+Disallow: /backup/
+Disallow: /*.php$
+Disallow: /*.js$
+Disallow: /*.css$
+Disallow: /*.inc$
+Disallow: /*?*
+Disallow: /*/trackback/
+Disallow: /*/feed/
+Disallow: /*/page/
+Disallow: /tag/
+Disallow: /search/
+Disallow: /*?s=*
+Disallow: /*&s=*
+Disallow: /*print=*
+Disallow: /*utm_source=*
+Disallow: /*utm_medium=*
+Disallow: /*utm_campaign=*
+
+# Правила для Яндекс
+User-agent: Yandex
+Allow: /
+Allow: /sitemap.xml
+Disallow: /admin/
+Disallow: /cgi-bin/
+Clean-param: utm_source&utm_medium&utm_campaign
+Clean-param: yclid
+
+# Правила для Google
+User-agent: Googlebot
+Allow: /
+Allow: /sitemap.xml
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# Правила для Bing
+User-agent: Bingbot
+Allow: /
+Allow: /sitemap.xml
+Disallow: /admin/
+Disallow: /cgi-bin/
+
+# Запрет всем ботам, которые потребляют много ресурсов
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+# Карта сайта
+Sitemap: https://colorvivo.ru/sitemap.xml
+
+# Основное зеркало сайта
+Host: colorvivo.ru 
+
+# Время индексации для Яндекса в секундах (задержка между запросами)
+Crawl-delay: 3 

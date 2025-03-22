@@ -503,3 +503,136 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+// ===== КОД ДЛЯ SEO ОПТИМИЗАЦИИ =====
+// Данный код будет использоваться для автоматической генерации sitemap и других SEO-элементов
+// Но для простоты реализации мы просто добавим комментарии
+
+// Добавляем Lazy Loading для изображений
+document.addEventListener('DOMContentLoaded', function() {
+    const lazyImages = document.querySelectorAll('img[data-src]');
+    
+    if ('IntersectionObserver' in window) {
+        let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    let lazyImage = entry.target;
+                    lazyImage.src = lazyImage.dataset.src;
+                    if (lazyImage.dataset.srcset) {
+                        lazyImage.srcset = lazyImage.dataset.srcset;
+                    }
+                    lazyImage.classList.remove('lazy');
+                    lazyImageObserver.unobserve(lazyImage);
+                }
+            });
+        });
+
+        lazyImages.forEach(function(lazyImage) {
+            lazyImageObserver.observe(lazyImage);
+        });
+    } else {
+        // Fallback для браузеров без поддержки IntersectionObserver
+        let lazyImagesList = lazyImages;
+        let active = false;
+
+        const lazyLoad = function() {
+            if (active === false) {
+                active = true;
+
+                setTimeout(function() {
+                    lazyImagesList.forEach(function(lazyImage) {
+                        if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
+                            lazyImage.src = lazyImage.dataset.src;
+                            if (lazyImage.dataset.srcset) {
+                                lazyImage.srcset = lazyImage.dataset.srcset;
+                            }
+                            lazyImage.classList.remove("lazy");
+
+                            lazyImagesList = lazyImagesList.filter(function(image) {
+                                return image !== lazyImage;
+                            });
+
+                            if (lazyImagesList.length === 0) {
+                                document.removeEventListener("scroll", lazyLoad);
+                                window.removeEventListener("resize", lazyLoad);
+                                window.removeEventListener("orientationchange", lazyLoad);
+                            }
+                        }
+                    });
+
+                    active = false;
+                }, 200);
+            }
+        };
+
+        document.addEventListener("scroll", lazyLoad);
+        window.addEventListener("resize", lazyLoad);
+        window.addEventListener("orientationchange", lazyLoad);
+    }
+});
+
+// Добавляем атрибуты schema.org для продуктов динамически
+const enhanceProductCards = () => {
+    const productCards = document.querySelectorAll('.product-card');
+    
+    productCards.forEach(card => {
+        // Проверяем, есть ли у карточки уже атрибуты schema.org
+        if (!card.hasAttribute('itemscope')) {
+            card.setAttribute('itemscope', '');
+            card.setAttribute('itemtype', 'https://schema.org/Product');
+            
+            // Находим элементы карточки для улучшения разметки
+            const image = card.querySelector('.product-image');
+            const title = card.querySelector('.product-title');
+            const description = card.querySelector('.product-description');
+            const price = card.querySelector('.product-price');
+            
+            if (image && !image.hasAttribute('itemprop')) {
+                image.setAttribute('itemprop', 'image');
+            }
+            
+            if (title && !title.hasAttribute('itemprop')) {
+                title.setAttribute('itemprop', 'name');
+            }
+            
+            if (description && !description.hasAttribute('itemprop')) {
+                description.setAttribute('itemprop', 'description');
+            }
+            
+            if (price && !price.hasAttribute('itemprop')) {
+                // Оборачиваем price в offers схему
+                const priceValue = price.textContent.replace('$', '');
+                
+                // Создаем элементы микроразметки для цены
+                const offersWrapper = document.createElement('div');
+                offersWrapper.setAttribute('itemprop', 'offers');
+                offersWrapper.setAttribute('itemscope', '');
+                offersWrapper.setAttribute('itemtype', 'https://schema.org/Offer');
+                
+                const priceCurrency = document.createElement('meta');
+                priceCurrency.setAttribute('itemprop', 'priceCurrency');
+                priceCurrency.setAttribute('content', 'USD');
+                
+                const priceItem = document.createElement('meta');
+                priceItem.setAttribute('itemprop', 'price');
+                priceItem.setAttribute('content', priceValue);
+                
+                const availability = document.createElement('link');
+                availability.setAttribute('itemprop', 'availability');
+                availability.setAttribute('href', 'https://schema.org/InStock');
+                
+                // Вставляем элементы в DOM
+                offersWrapper.appendChild(price.cloneNode(true));
+                offersWrapper.appendChild(priceCurrency);
+                offersWrapper.appendChild(priceItem);
+                offersWrapper.appendChild(availability);
+                
+                // Заменяем элемент цены разметкой schema.org
+                price.parentNode.replaceChild(offersWrapper, price);
+            }
+        }
+    });
+};
+
+// Запускаем улучшение разметки Schema.org при загрузке страницы
+document.addEventListener('DOMContentLoaded', enhanceProductCards);
