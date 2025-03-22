@@ -12,6 +12,7 @@ const hamburger = document.getElementById('hamburger');
 const nav = document.querySelector('nav');
 const menuOverlay = document.querySelector('.menu-overlay');
 const body = document.body;
+const mobileMenuLinks = document.querySelectorAll('nav ul li a');
 
 hamburger.addEventListener('click', () => {
     hamburger.classList.toggle('active');
@@ -25,6 +26,16 @@ menuOverlay.addEventListener('click', () => {
     nav.classList.remove('active');
     menuOverlay.classList.remove('active');
     body.classList.remove('menu-open');
+});
+
+// Закрытие мобильного меню при клике на ссылку
+mobileMenuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        nav.classList.remove('active');
+        menuOverlay.classList.remove('active');
+        body.classList.remove('menu-open');
+    });
 });
 
 // Изменение шапки при прокрутке
@@ -169,49 +180,128 @@ filterCategoryBtns.forEach(btn => {
     });
 });
 
-// Поиск по товарам
-const searchInput = document.querySelector('.search-products');
-
-searchInput.addEventListener('input', () => {
-    const searchValue = searchInput.value.toLowerCase();
-
-    productCards.forEach(card => {
-        const title = card.querySelector('.product-title').textContent.toLowerCase();
-        const description = card.querySelector('.product-description').textContent.toLowerCase();
-
-        if (title.includes(searchValue) || description.includes(searchValue)) {
-            card.classList.remove('hidden');
-        } else {
-            card.classList.add('hidden');
+// Удаление кода для кнопок wishlist и добавление функционала для модального окна заказа
+document.addEventListener('DOMContentLoaded', function() {
+    // Получаем элементы модального окна заказа
+    const orderModal = document.getElementById('orderModal');
+    const orderCloseBtn = document.querySelector('.order-modal-close');
+    const orderForm = document.getElementById('orderForm');
+    const orderProductImage = document.getElementById('orderProductImage');
+    const orderProductTitle = document.getElementById('orderProductTitle');
+    const orderProductPrice = document.getElementById('orderProductPrice');
+    const orderTotalPrice = document.getElementById('orderTotalPrice');
+    const orderQuantityInput = document.getElementById('orderQuantity');
+    
+    // Получаем все кнопки "Оформить заказ"
+    const orderButtons = document.querySelectorAll('.btn-order');
+    
+    // Функция для обновления итоговой цены
+    function updateTotalPrice(price, quantity) {
+        const total = (price * quantity).toFixed(2);
+        orderTotalPrice.textContent = '$' + total;
+    }
+    
+    // Открытие модального окна при клике на кнопку "Оформить заказ"
+    orderButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productCard = this.closest('.product-card');
+            const productImage = productCard.querySelector('.product-image').src;
+            const productTitle = productCard.querySelector('.product-title').textContent;
+            const productPrice = productCard.querySelector('.product-price').textContent;
+            const priceValue = parseFloat(productPrice.replace('$', ''));
+            
+            // Заполняем данные товара в модальном окне
+            orderProductImage.src = productImage;
+            orderProductTitle.textContent = productTitle;
+            orderProductPrice.textContent = productPrice;
+            
+            // Устанавливаем начальное значение итоговой цены
+            updateTotalPrice(priceValue, 1);
+            
+            // Показываем модальное окно
+            orderModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Обновляем итоговую сумму при изменении количества
+            orderQuantityInput.onchange = function() {
+                const quantity = parseInt(this.value) || 1;
+                updateTotalPrice(priceValue, quantity);
+            };
+            
+            orderQuantityInput.oninput = function() {
+                const quantity = parseInt(this.value) || 1;
+                updateTotalPrice(priceValue, quantity);
+            };
+        });
+    });
+    
+    // Закрытие модального окна при клике на крестик
+    orderCloseBtn.addEventListener('click', function() {
+        orderModal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+    
+    // Закрытие модального окна при клике вне его содержимого
+    orderModal.addEventListener('click', function(event) {
+        if (event.target === orderModal) {
+            orderModal.style.display = 'none';
+            document.body.style.overflow = '';
         }
     });
-});
-
-// Добавление товаров в избранное
-const wishlistBtns = document.querySelectorAll('.btn-wishlist');
-
-wishlistBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        btn.classList.toggle('active');
-        const icon = btn.querySelector('i');
-
-        if (btn.classList.contains('active')) {
-            icon.classList.remove('far');
-            icon.classList.add('fas');
-        } else {
-            icon.classList.remove('fas');
-            icon.classList.add('far');
+    
+    // Закрытие модального окна по клавише Escape
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && orderModal.style.display === 'flex') {
+            orderModal.style.display = 'none';
+            document.body.style.overflow = '';
         }
     });
-});
+    
+    // Обработка отправки формы заказа
+    orderForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Получаем информацию о товаре
+        const productTitle = document.getElementById('orderProductTitle').textContent;
+        const productPrice = document.getElementById('orderProductPrice').textContent;
+        const totalPrice = document.getElementById('orderTotalPrice').textContent;
+        
+        // Получаем данные клиента
+        const name = document.getElementById('orderName').value;
+        const phone = document.getElementById('orderPhone').value;
+        const email = document.getElementById('orderEmail').value;
+        const quantity = document.getElementById('orderQuantity').value;
+        const comment = document.getElementById('orderComment').value;
+        
+        // Формируем сообщение для отправки в Telegram
+        const telegramMessage = `
+<b>Новый заказ с сайта</b>
+<b>Товар:</b> ${productTitle}
+<b>Цена:</b> ${productPrice}
+<b>Количество:</b> ${quantity}
+<b>Итого:</b> ${totalPrice}
 
-// Быстрый просмотр товара
-const quickViewBtns = document.querySelectorAll('.product-quick-view');
-
-quickViewBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Здесь будет открываться модальное окно быстрого просмотра
-        alert('Функция быстрого просмотра будет доступна в следующей версии');
+<b>Информация о клиенте:</b>
+<b>Имя:</b> ${name}
+<b>Телефон:</b> ${phone}
+<b>Email:</b> ${email}
+<b>Комментарий:</b> ${comment || 'Не указан'}
+`;
+        
+        // Отправляем данные в Telegram
+        sendToTelegram(telegramMessage)
+            .then(response => {
+                alert('Спасибо за заказ! Мы свяжемся с вами в ближайшее время.');
+                
+                // Закрываем модальное окно и сбрасываем форму
+                orderModal.style.display = 'none';
+                document.body.style.overflow = '';
+                orderForm.reset();
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке данных:', error);
+                alert('Произошла ошибка при оформлении заказа. Пожалуйста, попробуйте позже.');
+            });
     });
 });
 
@@ -296,9 +386,27 @@ if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
         e.preventDefault();
 
-        // Здесь будет отправка формы на сервер
-        // Имитируем успешную отправку
-        setTimeout(() => {
+        // Собираем данные из формы
+        const name = document.getElementById('name').value;
+        const phone = document.getElementById('phone').value;
+        const email = document.getElementById('email').value;
+        const topic = document.getElementById('topic').value;
+        const message = document.getElementById('message').value;
+
+        // Формируем сообщение для отправки в Telegram
+        const telegramMessage = `
+<b>Новое сообщение с сайта</b>
+<b>Имя:</b> ${name}
+<b>Телефон:</b> ${phone}
+<b>Email:</b> ${email}
+<b>Тема:</b> ${topic}
+<b>Сообщение:</b> ${message}
+`;
+
+        // Отправляем данные в Telegram
+        sendToTelegram(telegramMessage)
+            .then(response => {
+                // Показываем сообщение об успешной отправке
             successMessage.classList.add('show');
             contactForm.reset();
 
@@ -306,8 +414,33 @@ if (contactForm) {
             setTimeout(() => {
                 successMessage.classList.remove('show');
             }, 5000);
-        }, 1000);
+            })
+            .catch(error => {
+                console.error('Ошибка при отправке данных:', error);
+                alert('Произошла ошибка при отправке сообщения. Пожалуйста, попробуйте позже.');
+            });
     });
+}
+
+// Функция для отправки данных в Telegram
+function sendToTelegram(message) {
+    // URL нашего серверного API
+    const apiUrl = '/send-to-telegram'; // Если серверный API на том же домене
+    // const apiUrl = 'http://localhost:3000/send-to-telegram'; // Для локальной разработки
+    
+    // Параметры запроса
+    const params = {
+        message: message
+    };
+    
+    // Отправляем запрос к нашему серверу
+    return fetch(apiUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(params)
+    }).then(response => response.json());
 }
 
 // Интерактивная карта
@@ -319,3 +452,54 @@ if (mapOverlay) {
         window.open('https://maps.google.com/maps?ll=55.756391,37.623451&z=17&t=m&hl=ru&gl=RU&mapclient=embed&q=%D0%9C%D0%BE%D1%81%D0%BA%D0%BE%D0%B2%D1%81%D0%BA%D0%B8%D0%B9%20%D0%9A%D1%80%D0%B5%D0%BC%D0%BB%D1%8C');
     });
 }
+
+// Функциональность для модального окна галереи
+document.addEventListener('DOMContentLoaded', function() {
+    // Получаем элементы модального окна
+    const modal = document.getElementById('galleryModal');
+    const closeBtn = document.querySelector('.gallery-modal-close');
+    const modalImg = document.getElementById('modalImage');
+    const modalTitle = document.getElementById('modalTitle');
+    const modalDesc = document.getElementById('modalDescription');
+    
+    // Получаем все элементы галереи
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    // Открытие модального окна при клике на элемент галереи
+    galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+            const imgSrc = this.querySelector('img').src;
+            const title = this.querySelector('.gallery-item-info h3').textContent;
+            const description = this.querySelector('.gallery-item-info p').textContent;
+            
+            modalImg.src = imgSrc;
+            modalTitle.textContent = title;
+            modalDesc.textContent = description;
+            
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        });
+    });
+    
+    // Закрытие модального окна при клике на крестик
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+    
+    // Закрытие модального окна при клике вне картинки
+    modal.addEventListener('click', function(event) {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+    
+    // Закрытие модального окна по клавише Escape
+    document.addEventListener('keydown', function(event) {
+        if (event.key === 'Escape' && modal.style.display === 'flex') {
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
+});

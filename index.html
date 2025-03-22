@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ColorVivo - Краски и декоративная штукатурка</title>
+    <!-- Фавиконки -->
+    <link rel="icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <!-- Шрифты и стили -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
@@ -27,17 +31,11 @@
                     <ul>
                         <li><a href="#hero" class="active"><i class="fas fa-home"></i> Главная</a></li>
                         <li><a href="#products"><i class="fas fa-swatchbook"></i> Продукты</a></li>
-                        <li><a href="#about"><i class="fas fa-info-circle"></i> О нас</a></li>
+                        <li><a href="#gallery"><i class="fas fa-images"></i> Галерея</a></li>
+                        <li><a href="#testimonials"><i class="fas fa-comment-alt"></i> Отзывы</a></li>
                         <li><a href="#contacts"><i class="fas fa-envelope"></i> Контакты</a></li>
                     </ul>
                     <div class="nav-icons">
-                        <div class="nav-icon">
-                            <i class="fas fa-search"></i>
-                        </div>
-                        <div class="nav-icon">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count">0</span>
-                        </div>
                         <a href="#contacts" class="request-btn">
                             <i class="fas fa-paper-plane"></i> <span>Оставить заявку</span>
                         </a>
@@ -99,11 +97,6 @@
         <div class="slider-arrow next">
             <i class="fas fa-chevron-right"></i>
         </div>
-        
-        <div class="hero-badge">
-            <span>-20%</span>
-            <span>на первый заказ</span>
-        </div>
     </section>
 
     <!-- Продукты -->
@@ -124,11 +117,6 @@
                         <i class="fas fa-fill-drip"></i> Краски
                     </button>
                 </div>
-                
-                <div class="search-container">
-                    <i class="fas fa-search search-icon"></i>
-                    <input type="text" class="search-products" placeholder="Поиск товаров...">
-                </div>
             </div>
             
             <div class="products-grid">
@@ -139,7 +127,6 @@
                     </div>
                     <div class="product-image-container">
                         <img src="https://via.placeholder.com/400x300?text=Венецианская+штукатурка" alt="Венецианская штукатурка" class="product-image">
-                        <div class="product-quick-view">Быстрый просмотр</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Венецианская штукатурка</h3>
@@ -156,12 +143,9 @@
                         </div>
                         <p class="product-description">Классическое декоративное покрытие для создания эффекта мрамора и натурального камня.</p>
                         <div class="product-actions">
-                            <button class="btn btn-cart">
-                                <i class="fas fa-shopping-cart"></i> В корзину
+                            <button class="btn btn-order">
+                                <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
-                            <div class="btn-wishlist">
-                                <i class="far fa-heart"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -172,7 +156,6 @@
                     </div>
                     <div class="product-image-container">
                         <img src="https://via.placeholder.com/400x300?text=Матовая+краска" alt="Матовая краска" class="product-image">
-                        <div class="product-quick-view">Быстрый просмотр</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Матовая краска</h3>
@@ -188,12 +171,9 @@
                         </div>
                         <p class="product-description">Премиальная матовая краска, создающая благородное покрытие с высокой устойчивостью.</p>
                         <div class="product-actions">
-                            <button class="btn btn-cart">
-                                <i class="fas fa-shopping-cart"></i> В корзину
+                            <button class="btn btn-order">
+                                <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
-                            <div class="btn-wishlist">
-                                <i class="far fa-heart"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -205,7 +185,6 @@
                     </div>
                     <div class="product-image-container">
                         <img src="https://via.placeholder.com/400x300?text=Текстурная+штукатурка" alt="Текстурная штукатурка" class="product-image">
-                        <div class="product-quick-view">Быстрый просмотр</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Текстурная штукатурка</h3>
@@ -221,12 +200,9 @@
                         </div>
                         <p class="product-description">Декоративная штукатурка с рельефной поверхностью для создания уникальных фактур.</p>
                         <div class="product-actions">
-                            <button class="btn btn-cart">
-                                <i class="fas fa-shopping-cart"></i> В корзину
+                            <button class="btn btn-order">
+                                <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
-                            <div class="btn-wishlist">
-                                <i class="far fa-heart"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -237,7 +213,6 @@
                     </div>
                     <div class="product-image-container">
                         <img src="https://via.placeholder.com/400x300?text=Глянцевая+краска" alt="Глянцевая краска" class="product-image">
-                        <div class="product-quick-view">Быстрый просмотр</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Глянцевая краска</h3>
@@ -254,12 +229,9 @@
                         </div>
                         <p class="product-description">Глянцевая краска для создания зеркального эффекта и сияющих поверхностей.</p>
                         <div class="product-actions">
-                            <button class="btn btn-cart">
-                                <i class="fas fa-shopping-cart"></i> В корзину
+                            <button class="btn btn-order">
+                                <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
-                            <div class="btn-wishlist">
-                                <i class="far fa-heart"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -270,7 +242,6 @@
                     </div>
                     <div class="product-image-container">
                         <img src="https://via.placeholder.com/400x300?text=Шелковая+штукатурка" alt="Шелковая штукатурка" class="product-image">
-                        <div class="product-quick-view">Быстрый просмотр</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Шелковая штукатурка</h3>
@@ -286,12 +257,9 @@
                         </div>
                         <p class="product-description">Элитное покрытие с эффектом шелка, создающее изысканные переливы света.</p>
                         <div class="product-actions">
-                            <button class="btn btn-cart">
-                                <i class="fas fa-shopping-cart"></i> В корзину
+                            <button class="btn btn-order">
+                                <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
-                            <div class="btn-wishlist">
-                                <i class="far fa-heart"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -303,7 +271,6 @@
                     </div>
                     <div class="product-image-container">
                         <img src="https://via.placeholder.com/400x300?text=Эмаль+универсальная" alt="Эмаль универсальная" class="product-image">
-                        <div class="product-quick-view">Быстрый просмотр</div>
                     </div>
                     <div class="product-info">
                         <h3 class="product-title">Эмаль универсальная</h3>
@@ -320,12 +287,9 @@
                         </div>
                         <p class="product-description">Высокопрочная эмаль с защитой от влаги и УФ-лучей для внутренних и наружных работ.</p>
                         <div class="product-actions">
-                            <button class="btn btn-cart">
-                                <i class="fas fa-shopping-cart"></i> В корзину
+                            <button class="btn btn-order">
+                                <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
-                            <div class="btn-wishlist">
-                                <i class="far fa-heart"></i>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -333,149 +297,122 @@
         </div>
     </section>
 
-    <!-- О нас -->
-    <section id="about">
-        <div class="container about-container">
-            <h2>О нас</h2>
-            <p class="about-subtitle">Мы помогаем создавать уникальные интерьеры уже более 10 лет</p>
+    <!-- Галерея -->
+    <section id="gallery">
+        <div class="container gallery-container">
+            <h2>Галерея работ наших клиентов</h2>
+            <p class="gallery-subtitle">Вдохновляйтесь реальными проектами с использованием наших материалов</p>
             
-            <div class="about-tabs">
-                <button class="about-tab active" data-tab="company">Компания</button>
-                <button class="about-tab" data-tab="history">История</button>
-                <button class="about-tab" data-tab="values">Ценности</button>
-            </div>
-            
-            <div class="about-content active" id="company">
-                <div class="about-text">
-                    <p>ColorVivo — это компания с богатым опытом в производстве высококачественных декоративных штукатурок и красок. Мы создаем инновационные материалы, которые сочетают в себе эстетику, функциональность и экологичность.</p>
-                </div>
-                
-                <img src="https://via.placeholder.com/1000x500?text=Наша+компания" alt="Наша компания" class="about-image">
-                
-                <div class="about-mission">
-                    <h3 class="mission-title">Наша миссия</h3>
-                    <p class="mission-text">Создавать инновационные, экологически чистые продукты, которые вдохновляют людей преображать свои пространства. Мы стремимся сделать высококачественную отделку доступной для всех.</p>
-                </div>
-                
-                <div class="about-stats">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="10">0</div>
-                        <div class="stat-label">Лет опыта</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="5000">0</div>
-                        <div class="stat-label">Довольных клиентов</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="120">0</div>
-                        <div class="stat-label">Видов продукции</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="15">0</div>
-                        <div class="stat-label">Наград</div>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="img/gallery1.png" alt="Проект интерьера">
+                    <div class="gallery-item-info">
+                        <h3>Современная квартира</h3>
+                        <p>Москва, 2023</p>
                     </div>
                 </div>
-            </div>
-            
-            <div class="about-content" id="history">
-                <div class="about-text">
-                    <p>Компания ColorVivo была основана в 2013 году группой профессионалов с многолетним опытом в индустрии строительных материалов. Начав с небольшого производства, мы постепенно расширяли ассортимент и географию поставок.</p>
-                    <p>В 2016 году мы запустили инновационную линейку экологически чистых декоративных штукатурок, которая быстро завоевала признание клиентов и экспертов рынка. С 2018 года ColorVivo регулярно участвует в международных выставках и получает престижные награды за качество продукции и инновационные разработки.</p>
+                <div class="gallery-item">
+                    <img src="img/gallery2.png" alt="Проект интерьера">
+                    <div class="gallery-item-info">
+                        <h3>Загородный дом</h3>
+                        <p>Подмосковье, 2022</p>
+                    </div>
                 </div>
-                
-                <img src="https://via.placeholder.com/1000x500?text=История+компании" alt="История компании" class="about-image">
-            </div>
-            
-            <div class="about-content" id="values">
-                <div class="about-text">
-                    <p>В основе нашей работы лежат принципы, которые определяют все аспекты деятельности компании ColorVivo — от производства до обслуживания клиентов.</p>
+                <div class="gallery-item">
+                    <img src="img/gallery3.png" alt="Проект интерьера">
+                    <div class="gallery-item-info">
+                        <h3>Офисное пространство</h3>
+                        <p>Санкт-Петербург, 2023</p>
+                    </div>
                 </div>
-                
-                <div class="about-values">
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-leaf"></i>
-                        </div>
-                        <h3 class="value-title">Экологичность</h3>
-                        <p class="value-description">Мы используем только безопасные компоненты и эко-дружественные технологии, заботясь о здоровье наших клиентов и окружающей среде.</p>
+                <div class="gallery-item">
+                    <img src="img/gallery4.png" alt="Проект интерьера">
+                    <div class="gallery-item-info">
+                        <h3>Ресторан "Амбиенте"</h3>
+                        <p>Москва, 2022</p>
                     </div>
-                    
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-flask"></i>
-                        </div>
-                        <h3 class="value-title">Инновации</h3>
-                        <p class="value-description">Мы постоянно совершенствуем формулы и технологии, чтобы предлагать клиентам самые современные и эффективные решения.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery5.png" alt="Проект интерьера">
+                    <div class="gallery-item-info">
+                        <h3>Бутик-отель</h3>
+                        <p>Сочи, 2023</p>
                     </div>
-                    
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-gem"></i>
-                        </div>
-                        <h3 class="value-title">Качество</h3>
-                        <p class="value-description">Каждый продукт проходит многоступенчатый контроль качества, чтобы гарантировать безупречный результат на вашей стене.</p>
-                    </div>
-                    
-                    <div class="value-card">
-                        <div class="value-icon">
-                            <i class="fas fa-heart"></i>
-                        </div>
-                        <h3 class="value-title">Клиентоориентированность</h3>
-                        <p class="value-description">Мы строим долгосрочные отношения с клиентами, основанные на доверии, понимании их потребностей и высоком уровне сервиса.</p>
+                </div>
+                <div class="gallery-item">
+                    <img src="img/gallery6.png" alt="Проект интерьера">
+                    <div class="gallery-item-info">
+                        <h3>Пентхаус "Skyline"</h3>
+                        <p>Москва, 2022</p>
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Отзывы -->
+    <section id="testimonials">
+        <div class="container testimonials-container">
+            <h2>Отзывы клиентов</h2>
+            <p class="testimonials-subtitle">Что говорят о нас те, кто уже попробовал наши материалы</p>
             
-            <div class="team-section">
-                <h3 class="team-title">Наша команда</h3>
-                <p class="team-subtitle">Талантливые профессионалы, объединенные страстью к своему делу</p>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">Впечатлена качеством венецианской штукатурки! Заказывала для гостиной, результат превзошел ожидания. Консультанты помогли с выбором оттенка, который идеально вписался в интерьер.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="img/anna_avatar.png" alt="Анна Ковалева">
+                        </div>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Анна Ковалева</h4>
+                            <p class="testimonial-position">Москва</p>
+                        </div>
+                    </div>
+                </div>
                 
-                <div class="team-grid">
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src="https://via.placeholder.com/300x300?text=Анна+Петрова" alt="Анна Петрова" class="team-image">
-                            <div class="team-social">
-                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">Как профессиональному дизайнеру, для меня важно качество материалов. ColorVivo не разочаровал — их декоративная штукатурка отличного качества, легко наносится и выглядит премиально.</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="img/maxim_avatar.png" alt="Максим Соколов">
                         </div>
-                        <div class="team-info">
-                            <h4 class="team-name">Анна Петрова</h4>
-                            <p class="team-position">Генеральный директор</p>
-                            <p class="team-bio">Более 15 лет опыта в индустрии декоративных покрытий. Эксперт в области инновационных отделочных материалов.</p>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Максим Соколов</h4>
+                            <p class="testimonial-position">Дизайнер интерьеров</p>
                         </div>
                     </div>
-                    
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src="https://via.placeholder.com/300x300?text=Сергей+Иванов" alt="Сергей Иванов" class="team-image">
-                            <div class="team-social">
-                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
-                        </div>
-                        <div class="team-info">
-                            <h4 class="team-name">Сергей Иванов</h4>
-                            <p class="team-position">Технический директор</p>
-                            <p class="team-bio">Отвечает за разработку новых формул и технологий. Кандидат химических наук, автор 7 патентов.</p>
-                        </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
                     </div>
-                    
-                    <div class="team-card">
-                        <div class="team-image-container">
-                            <img src="https://via.placeholder.com/300x300?text=Елена+Смирнова" alt="Елена Смирнова" class="team-image">
-                            <div class="team-social">
-                                <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
-                                <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
-                            </div>
+                    <p class="testimonial-text">Заказывала матовую краску для спальни. Порадовало отсутствие запаха и быстрое высыхание. Цвет соответствует образцу, покрытие ровное. Обязательно буду заказывать ещё!</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">
+                            <img src="img/irina_avatar.png" alt="Ирина Волкова">
                         </div>
-                        <div class="team-info">
-                            <h4 class="team-name">Елена Смирнова</h4>
-                            <p class="team-position">Дизайнер цвета</p>
-                            <p class="team-bio">Создает уникальные палитры и текстуры. Выпускница Академии дизайна, участник международных выставок.</p>
+                        <div class="testimonial-info">
+                            <h4 class="testimonial-name">Ирина Волкова</h4>
+                            <p class="testimonial-position">Санкт-Петербург</p>
                         </div>
                     </div>
                 </div>
@@ -555,17 +492,8 @@
                         </div>
                         
                         <div class="contact-social">
-                            <a href="#" class="social-btn facebook">
-                                <i class="fab fa-facebook-f"></i>
-                            </a>
-                            <a href="#" class="social-btn instagram">
-                                <i class="fab fa-instagram"></i>
-                            </a>
-                            <a href="#" class="social-btn twitter">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                            <a href="#" class="social-btn youtube">
-                                <i class="fab fa-youtube"></i>
+                            <a href="#" class="social-btn yandex">
+                                <i class="fab fa-yandex"></i>
                             </a>
                         </div>
                     </div>
@@ -630,13 +558,6 @@
                         </div>
                         
                         <div class="form-actions">
-                            <div class="form-checkbox">
-                                <input type="checkbox" id="privacy" name="privacy" required>
-                                <label for="privacy">
-                                    Я согласен с <a href="#">политикой конфиденциальности</a> и даю согласие на обработку моих персональных данных
-                                </label>
-                            </div>
-                            
                             <button type="submit" class="submit-btn">
                                 Отправить <i class="fas fa-arrow-right"></i>
                             </button>
@@ -720,7 +641,7 @@
                     <ul class="footer-links">
                         <li><a href="#hero"><i class="fas fa-chevron-right"></i> Главная</a></li>
                         <li><a href="#products"><i class="fas fa-chevron-right"></i> Продукты</a></li>
-                        <li><a href="#about"><i class="fas fa-chevron-right"></i> О нас</a></li>
+                        <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Галерея</a></li>
                         <li><a href="#contacts"><i class="fas fa-chevron-right"></i> Контакты</a></li>
                     </ul>
                 </div>
@@ -750,25 +671,101 @@
                 <div class="footer-section">
                     <h3 class="footer-title">Мы в соцсетях</h3>
                     <div class="footer-social">
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#"><i class="fab fa-yandex"></i></a>
                     </div>
                 </div>
             </div>
             
             <div class="footer-bottom">
                 <p>&copy; 2024 ColorVivo. Все права защищены.</p>
-                <p>
-                    <a href="#">Политика конфиденциальности</a> | 
-                    <a href="#">Условия использования</a> | 
-                    <a href="#">Карта сайта</a>
-                </p>
             </div>
         </div>
     </footer>
+
+    <!-- Модальное окно для галереи -->
+    <div class="gallery-modal" id="galleryModal" style="display: none;">
+        <span class="gallery-modal-close">&times;</span>
+        <div class="gallery-modal-content">
+            <img id="modalImage" src="" alt="Увеличенное изображение">
+            <div class="gallery-modal-info">
+                <h3 id="modalTitle"></h3>
+                <p id="modalDescription"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно для заказа -->
+    <div class="order-modal" id="orderModal" style="display: none;">
+        <div class="order-modal-content">
+            <span class="order-modal-close">&times;</span>
+            <h2 class="order-modal-title">Оформление заказа</h2>
+            
+            <div class="order-product-info">
+                <div class="order-product-image">
+                    <img id="orderProductImage" src="" alt="Изображение товара">
+                </div>
+                <div class="order-product-details">
+                    <h3 id="orderProductTitle"></h3>
+                    <div class="order-product-price">
+                        <span id="orderProductPrice"></span>
+                    </div>
+                </div>
+            </div>
+
+            <form class="order-form" id="orderForm">
+                <h3 class="form-section-title">Контактная информация</h3>
+                
+                <div class="form-row">
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="orderName">Имя <span class="form-required">*</span></label>
+                            <input type="text" id="orderName" name="orderName" required>
+                            <i class="far fa-user input-icon"></i>
+                        </div>
+                    </div>
+                    <div class="form-col">
+                        <div class="form-group">
+                            <label for="orderPhone">Телефон <span class="form-required">*</span></label>
+                            <input type="tel" id="orderPhone" name="orderPhone" required>
+                            <i class="fas fa-phone-alt input-icon"></i>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderEmail">Email <span class="form-required">*</span></label>
+                    <input type="email" id="orderEmail" name="orderEmail" required>
+                    <i class="far fa-envelope input-icon"></i>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderQuantity">Количество <span class="form-required">*</span></label>
+                    <input type="number" id="orderQuantity" name="orderQuantity" min="1" value="1" required>
+                    <i class="fas fa-box input-icon"></i>
+                </div>
+                
+                <div class="form-group">
+                    <label for="orderComment">Комментарий к заказу</label>
+                    <textarea id="orderComment" name="orderComment"></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <div class="order-summary">
+                        <div class="order-total">
+                            <span>Итого:</span>
+                            <span id="orderTotalPrice"></span>
+                        </div>
+                        
+                        <div class="order-submit">
+                            <button type="submit" class="submit-btn">
+                                Подтвердить заказ <i class="fas fa-check"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <script src="script.js"></script>
 </body>

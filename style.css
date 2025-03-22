@@ -174,6 +174,7 @@ nav ul li a.active::after {
 .nav-icons {
     display: flex;
     align-items: center;
+    margin-left: 20px;
 }
 
 .nav-icon {
@@ -190,48 +191,37 @@ nav ul li a.active::after {
     transform: scale(1.1);
 }
 
-.cart-count {
-    position: absolute;
-    top: -10px;
-    right: -10px;
-    width: 20px;
-    height: 20px;
-    background-color: #D4AF37;
-    color: white;
-    border-radius: 50%;
-    font-size: 12px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-weight: bold;
-}
-
 .hamburger {
     display: none;
     flex-direction: column;
     cursor: pointer;
     margin-left: 15px;
     z-index: 1001;
+    width: 30px;
+    height: 24px;
+    justify-content: space-between;
+    position: relative;
 }
 
 .hamburger span {
-    width: 25px;
+    width: 100%;
     height: 3px;
     background-color: #D97D54;
-    margin: 2px 0;
+    border-radius: 3px;
     transition: all 0.3s ease;
 }
 
 .hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 5px);
+    transform: rotate(45deg) translate(8px, 8px);
 }
 
 .hamburger.active span:nth-child(2) {
     opacity: 0;
+    transform: translateX(-20px);
 }
 
 .hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -5px);
+    transform: rotate(-45deg) translate(7px, -7px);
 }
 
 /* Главный блок */
@@ -240,12 +230,17 @@ nav ul li a.active::after {
     position: relative;
     overflow: hidden;
     margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .hero-slider {
     height: 100%;
     position: relative;
     z-index: 1;
+    display: flex;
+    align-items: center;
 }
 
 .hero-slide {
@@ -282,21 +277,22 @@ nav ul li a.active::after {
 }
 
 .slide1 {
-    background-image: url('https://via.placeholder.com/1200x600?text=Декоративная+Стена');
+    background-image: url('img/decorative-wall.png');
 }
 
 .slide2 {
-    background-image: url('https://via.placeholder.com/1200x600?text=Яркие+Краски');
+    background-image: url('img/colorful-paints.png');
 }
 
 .slide3 {
-    background-image: url('https://via.placeholder.com/1200x600?text=Роскошная+Отделка');
+    background-image: url('img/luxury-finish.png');
 }
 
 .hero-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
+    margin: 0 auto;
 }
 
 #hero h1 {
@@ -614,48 +610,18 @@ nav ul li a.active::after {
 }
 
 .filter-btn:hover:not(.active) {
+    background-color: #E89B78;
+    color: white;
     transform: translateY(-3px);
-    box-shadow: 0 4px 12px rgba(217, 125, 84, 0.2);
-    border-color: #D4AF37;
-    color: #D4AF37;
-}
-
-.search-container {
-    position: relative;
-    margin-left: 20px;
-    margin-bottom: 20px;
 }
 
 .search-products {
-    padding: 10px 15px 10px 40px;
-    border: 1px solid #D97D54;
-    border-radius: 30px;
-    font-family: Arial, sans-serif;
-    width: 250px;
-    transition: all 0.3s ease;
-}
-
-.search-products:focus {
-    outline: none;
-    box-shadow: 0 0 8px rgba(217, 125, 84, 0.4);
-    width: 280px;
-}
-
-.search-icon {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #D97D54;
-    font-size: 16px;
 }
 
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 30px;
-    max-width: 1100px;
-    margin: 0 auto;
 }
 
 .product-card {
@@ -741,23 +707,6 @@ nav ul li a.active::after {
     transform: scale(1.1);
 }
 
-.product-quick-view {
-    position: absolute;
-    bottom: -50px;
-    left: 0;
-    width: 100%;
-    padding: 10px;
-    background-color: rgba(217, 125, 84, 0.9);
-    color: white;
-    text-align: center;
-    transition: bottom 0.3s ease;
-    cursor: pointer;
-}
-
-.product-card:hover .product-quick-view {
-    bottom: 0;
-}
-
 .product-info {
     padding: 20px;
     flex-grow: 1;
@@ -811,20 +760,18 @@ nav ul li a.active::after {
 
 .product-actions {
     display: flex;
-    justify-content: space-between;
-    margin-top: auto;
+    align-items: center;
+    justify-content: center;
+    margin-top: 15px;
 }
 
 .product-card .btn {
-    flex: 1;
-    text-align: center;
-    padding: 12px 10px;
-    border-radius: 30px;
-    font-weight: 500;
-    font-size: 15px;
+    font-size: 0.9rem;
+    padding: 10px 15px;
+    flex-grow: 1;
 }
 
-.btn-cart {
+.btn-order {
     background-color: #D97D54;
     color: white;
     border: none;
@@ -832,36 +779,19 @@ nav ul li a.active::after {
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0 15px;
+    flex: 1;
+    min-width: 160px;
+    font-weight: 600;
 }
 
-.btn-cart i {
+.btn-order i {
     margin-right: 8px;
+    font-size: 14px;
 }
 
-.btn-cart:hover {
-    background-color: #E89B78;
-    box-shadow: 0 5px 15px rgba(217, 125, 84, 0.4);
-}
-
-.btn-wishlist {
-    width: 40px;
-    height: 40px;
-    background-color: #f5f5f5;
-    color: #999;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    margin-left: 10px;
-    transition: all 0.3s ease;
-}
-
-.btn-wishlist:hover,
-.btn-wishlist.active {
-    background-color: #ffebee;
-    color: #ff5252;
-    transform: scale(1.1);
+.btn-order:hover {
+    background-color: #c66b44;
 }
 
 .load-more {
@@ -929,16 +859,7 @@ nav ul li a.active::after {
 @media (max-width: 768px) {
     .filter-container {
         flex-direction: column;
-    }
-
-    .search-container {
-        margin-left: 0;
-        width: 100%;
-        max-width: 300px;
-    }
-
-    .search-products {
-        width: 100%;
+        align-items: stretch;
     }
 }
 
@@ -1301,14 +1222,14 @@ nav ul li a.active::after {
 }
 
 .team-bio {
-    color: #777;
-    font-size: 14px;
-    line-height: 1.6;
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.5;
 }
 
 .cta-container {
     text-align: center;
-    margin-top: 30px;
+    margin-top: 60px;
 }
 
 .cta-button {
@@ -1762,19 +1683,20 @@ nav ul li a.active::after {
 }
 
 .submit-btn {
-    padding: 12px 35px;
+    display: inline-block;
     background-color: #D97D54;
     color: white;
     border: none;
+    padding: 12px 25px;
     border-radius: 30px;
     font-family: 'Montserrat', sans-serif;
     font-size: 16px;
     font-weight: 500;
     cursor: pointer;
     transition: all 0.3s ease;
-    display: flex;
-    align-items: center;
     box-shadow: 0 5px 15px rgba(217, 125, 84, 0.3);
+    width: 100%;
+    text-align: center;
 }
 
 .submit-btn i {
@@ -1783,7 +1705,7 @@ nav ul li a.active::after {
 
 .submit-btn:hover {
     background-color: #E89B78;
-    transform: translateY(-3px);
+    transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(217, 125, 84, 0.4);
 }
 
@@ -2267,17 +2189,16 @@ footer::after {
 }
 
 .request-btn {
-    background-color: #D97D54;
-    color: white;
-    padding: 8px 15px;
-    border-radius: 25px;
-    font-size: 14px;
-    font-weight: 500;
-    font-family: 'Montserrat', sans-serif;
     display: flex;
     align-items: center;
-    margin-left: 20px;
+    padding: 12px 20px;
+    background-color: #d97d54;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: 700;
     transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(217, 125, 84, 0.3);
+    font-size: 0.9rem;
 }
 
 .request-btn i {
@@ -2286,42 +2207,158 @@ footer::after {
 }
 
 .request-btn:hover {
-    background-color: #D4AF37;
+    background-color: #c66b44;
     transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(212, 175, 55, 0.3);
 }
 
 @media (max-width: 992px) {
     .header-content {
-        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 10px;
     }
-
+    
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100vh;
+        background-color: #F5E8C7;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 20px 20px;
+        z-index: 1000;
+        transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
     nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 0 30px;
+    }
+    
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(217, 125, 84, 0.2);
+        transform: translateX(50px);
+        opacity: 0;
+        transition: all 0s ease;
+    }
+    
+    nav.active ul li {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.4s ease;
+    }
+    
+    nav.active ul li:nth-child(1) {
+        transition-delay: 0.1s;
+    }
+    
+    nav.active ul li:nth-child(2) {
+        transition-delay: 0.2s;
+    }
+    
+    nav.active ul li:nth-child(3) {
+        transition-delay: 0.3s;
+    }
+    
+    nav.active ul li:nth-child(4) {
+        transition-delay: 0.4s;
+    }
+    
+    nav.active ul li:nth-child(5) {
+        transition-delay: 0.5s;
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    nav ul li a::after {
         display: none;
     }
-
+    
+    .nav-icons {
+        margin: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        transform: translateX(50px);
+        opacity: 0;
+        transition: all 0s ease;
+    }
+    
+    nav.active .nav-icons {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.4s ease;
+        transition-delay: 0.6s;
+    }
+    
+    .request-btn {
+        margin: 10px 0 0;
+        width: 100%;
+        justify-content: center;
+        font-size: 0.8rem;
+        padding: 10px 15px;
+    }
+    
+    .request-btn i {
+        font-size: 12px;
+    }
+    
     .hamburger {
         display: flex;
     }
+}
 
-    .request-btn {
-        margin-left: 15px;
-        padding: 6px 10px;
-        font-size: 12px;
+@media (max-width: 768px) {
+    header {
+        padding: 12px 0;
     }
-
-    .request-btn i {
-        margin-right: 5px;
+    
+    header.scrolled {
+        padding: 8px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
     }
 }
 
 @media (max-width: 576px) {
+    header {
+        padding: 10px 0;
+    }
+    
+    header.scrolled {
+        padding: 6px 0;
+    }
+    
     .logo {
         font-size: 20px;
     }
 
     .logo i {
         font-size: 22px;
+        margin-right: 5px;
     }
 
     .request-btn span {
@@ -2338,5 +2375,646 @@ footer::after {
     .request-btn i {
         margin-right: 0;
         font-size: 16px;
+    }
+}
+
+/* Стили для мобильного меню */
+.menu-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(2px);
+    z-index: 990;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+@media (max-width: 992px) {
+    body.menu-open {
+        overflow: hidden;
+    }
+    
+    nav {
+        position: fixed;
+        top: 0;
+        right: -300px;
+        width: 280px;
+        height: 100vh;
+        background-color: #F5E8C7;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        padding: 80px 20px 20px;
+        z-index: 1000;
+        transition: right 0.3s ease;
+        box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+        overflow-y: auto;
+    }
+    
+    nav.active {
+        right: 0;
+    }
+    
+    nav ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        margin: 0 0 30px;
+    }
+    
+    nav ul li {
+        margin: 0;
+        width: 100%;
+        border-bottom: 1px solid rgba(217, 125, 84, 0.2);
+    }
+    
+    nav ul li a {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+        font-size: 16px;
+    }
+    
+    nav ul li a::after {
+        display: none;
+    }
+    
+    .nav-icons {
+        margin: 0;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .request-btn {
+        margin: 10px 0 0;
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* Стили для блока отзывов */
+#testimonials {
+    padding: 80px 0;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+#testimonials h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#testimonials h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #D97D54;
+    margin: 20px auto 0;
+}
+
+.testimonials-subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.testimonial-card {
+    padding: 30px;
+    position: relative;
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    text-align: left;
+}
+
+.testimonial-card:hover {
+    transform: translateY(-10px);
+}
+
+.testimonial-rating {
+    margin-bottom: 15px;
+}
+
+.testimonial-rating i {
+    color: #f8b617;
+    margin-right: 2px;
+}
+
+.testimonial-text {
+    font-style: italic;
+    margin-bottom: 20px;
+    color: #444;
+    line-height: 1.6;
+}
+
+.testimonial-author {
+    display: flex;
+    align-items: center;
+}
+
+.testimonial-avatar {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-right: 15px;
+    border: 3px solid #d97d54;
+}
+
+.testimonial-avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.testimonial-info {
+    flex: 1;
+}
+
+.testimonial-name {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    margin: 0 0 5px;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.testimonial-position {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.testimonial-card::before {
+    content: '\f10d';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 2rem;
+    color: rgba(217, 125, 84, 0.1);
+}
+
+/* Адаптивные стили для отзывов */
+@media (max-width: 992px) {
+    .testimonials-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .testimonial-card {
+        padding: 20px;
+    }
+    
+    .testimonial-text {
+        font-size: 0.95rem;
+    }
+    
+    .testimonials-title {
+        font-size: 1.6rem;
+    }
+    
+    .testimonials-subtitle {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 576px) {
+    .testimonials-title {
+        font-size: 1.4rem;
+    }
+    
+    .testimonial-card {
+        padding: 15px;
+    }
+}
+
+/* Стили для модального окна галереи */
+.gallery-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.gallery-modal-content {
+    position: relative;
+    max-width: 800px;
+    max-height: 90vh;
+    width: 100%;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 28px;
+    color: white;
+    cursor: pointer;
+    z-index: 10;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    transition: background 0.3s;
+}
+
+.gallery-modal-close:hover {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.gallery-modal-content img {
+    width: 100%;
+    max-height: 70vh;
+    object-fit: contain;
+}
+
+.gallery-modal-info {
+    padding: 20px;
+    background-color: #fff;
+}
+
+.gallery-modal-info h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.gallery-modal-info p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+#gallery {
+    position: relative;
+    padding: 100px 0;
+    background-color: #f9f9f9;
+}
+
+#gallery::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: url('https://via.placeholder.com/1920x1080?text=Галерея+фон') no-repeat center/cover;
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.gallery-container {
+    position: relative;
+    z-index: 1;
+}
+
+#gallery h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+#gallery h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background-color: #D97D54;
+    margin: 20px auto 0;
+}
+
+.gallery-subtitle {
+    color: #666;
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    text-align: center;
+    line-height: 1.6;
+}
+
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.gallery-item {
+    position: relative;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.05);
+}
+
+.gallery-item-info {
+    position: relative;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    background: #fff;
+    color: #333;
+    padding: 15px;
+    transform: none;
+    transition: none;
+    text-align: center;
+    border-top: 3px solid #D97D54;
+}
+
+.gallery-item-info h3 {
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    color: #D97D54;
+    font-weight: 600;
+    text-shadow: none;
+}
+
+.gallery-item-info p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 1;
+    color: #666;
+    text-shadow: none;
+}
+
+/* Адаптивные стили для галереи */
+@media (max-width: 992px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #gallery h2 {
+        font-size: 2rem;
+    }
+    
+    .gallery-subtitle {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 576px) {
+    #gallery {
+        padding: 70px 0;
+    }
+    
+    #gallery h2 {
+        font-size: 1.8rem;
+    }
+    
+    .gallery-item {
+        height: 220px;
+    }
+}
+
+/* Стили для модального окна заказа */
+.order-modal {
+    display: none;
+    position: fixed;
+    z-index: 10000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    justify-content: center;
+    align-items: center;
+}
+
+.order-modal-content {
+    position: relative;
+    background-color: white;
+    margin: auto;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 600px;
+    animation: modalFadeIn 0.4s;
+}
+
+@keyframes modalFadeIn {
+    from {opacity: 0; transform: translateY(-30px);}
+    to {opacity: 1; transform: translateY(0);}
+}
+
+.order-modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    color: #888;
+    font-size: 28px;
+    font-weight: bold;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.order-modal-close:hover {
+    color: #D97D54;
+}
+
+.order-modal-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.5rem;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #eee;
+}
+
+.order-product-info {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    border: 1px solid #eee;
+}
+
+.order-product-image {
+    flex: 0 0 100px;
+    margin-right: 15px;
+}
+
+.order-product-image img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.order-product-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.order-product-details h3 {
+    margin: 0 0 10px 0;
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.order-product-price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #D97D54;
+}
+
+.form-section-title {
+    font-size: 1.1rem;
+    color: #555;
+    margin: 20px 0 15px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-summary {
+    border-top: 1px solid #eee;
+    margin-top: 15px;
+    padding-top: 15px;
+    width: 100%;
+}
+
+.order-total {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.order-total span:first-child {
+    color: #555;
+}
+
+.order-total span:last-child {
+    color: #D97D54;
+    font-size: 1.3rem;
+}
+
+.order-submit {
+    margin-top: 20px;
+    width: 100%;
+}
+
+.order-submit .submit-btn {
+    width: 100%;
+    display: block;
+}
+
+/* Адаптивные стили для модального окна заказа */
+@media (max-width: 768px) {
+    .order-modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    .order-product-info {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .order-product-image {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 576px) {
+    .order-modal-content {
+        padding: 15px;
+    }
+    
+    .order-modal-title {
+        font-size: 1.3rem;
+    }
+    
+    .form-section-title {
+        font-size: 1rem;
     }
 }
