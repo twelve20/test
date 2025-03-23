@@ -277,15 +277,15 @@ nav ul li a.active::after {
 }
 
 .slide1 {
-    background-image: url('img/decorative-wall.png');
+    background-image: url('img/decorative-wall.webp');
 }
 
 .slide2 {
-    background-image: url('img/colorful-paints.png');
+    background-image: url('img/colorful-paints.webp');
 }
 
 .slide3 {
-    background-image: url('img/luxury-finish.png');
+    background-image: url('img/luxury-finish.webp');
 }
 
 .hero-content {
