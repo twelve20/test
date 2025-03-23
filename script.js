@@ -656,146 +656,104 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ===== КОД ДЛЯ SEO ОПТИМИЗАЦИИ =====
-// Данный код будет использоваться для автоматической генерации sitemap и других SEO-элементов
-// Но для простоты реализации мы просто добавим комментарии
-
-// Добавляем Lazy Loading для изображений
+// Оптимизация загрузки изображений с использованием LazyLoad
 document.addEventListener('DOMContentLoaded', function() {
-    const lazyImages = document.querySelectorAll('img[data-src]');
+    // Добавляем обработку LazyLoad для всех изображений
+    const lazyImages = document.querySelectorAll('img[loading="lazy"]');
     
     if ('IntersectionObserver' in window) {
         let lazyImageObserver = new IntersectionObserver(function(entries, observer) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting) {
                     let lazyImage = entry.target;
-                    lazyImage.src = lazyImage.dataset.src;
+                    
+                    // Если есть data-src, используем его как основной источник
+                    if (lazyImage.dataset.src) {
+                        lazyImage.src = lazyImage.dataset.src;
+                    }
+                    
+                    // Если есть data-srcset, устанавливаем его для адаптивных изображений
                     if (lazyImage.dataset.srcset) {
                         lazyImage.srcset = lazyImage.dataset.srcset;
                     }
+                    
+                    // Удаляем класс lazy, если он есть
                     lazyImage.classList.remove('lazy');
+                    
+                    // Прекращаем наблюдение за изображением
                     lazyImageObserver.unobserve(lazyImage);
                 }
             });
         });
 
+        // Добавляем все изображения для наблюдения
         lazyImages.forEach(function(lazyImage) {
             lazyImageObserver.observe(lazyImage);
         });
     } else {
         // Fallback для браузеров без поддержки IntersectionObserver
-        let lazyImagesList = lazyImages;
-        let active = false;
-
-        const lazyLoad = function() {
-            if (active === false) {
-                active = true;
-
-                setTimeout(function() {
-                    lazyImagesList.forEach(function(lazyImage) {
-                        if ((lazyImage.getBoundingClientRect().top <= window.innerHeight && lazyImage.getBoundingClientRect().bottom >= 0) && getComputedStyle(lazyImage).display !== "none") {
-                            lazyImage.src = lazyImage.dataset.src;
-                            if (lazyImage.dataset.srcset) {
-                                lazyImage.srcset = lazyImage.dataset.srcset;
-                            }
-                            lazyImage.classList.remove("lazy");
-
-                            lazyImagesList = lazyImagesList.filter(function(image) {
-                                return image !== lazyImage;
-                            });
-
-                            if (lazyImagesList.length === 0) {
-                                document.removeEventListener("scroll", lazyLoad);
-                                window.removeEventListener("resize", lazyLoad);
-                                window.removeEventListener("orientationchange", lazyLoad);
-                            }
-                        }
-                    });
-
-                    active = false;
-                }, 200);
-            }
-        };
-
-        document.addEventListener("scroll", lazyLoad);
-        window.addEventListener("resize", lazyLoad);
-        window.addEventListener("orientationchange", lazyLoad);
+        // Простая загрузка всех изображений с небольшой задержкой
+        setTimeout(function() {
+            lazyImages.forEach(function(lazyImage) {
+                if (lazyImage.dataset.src) {
+                    lazyImage.src = lazyImage.dataset.src;
+                }
+                if (lazyImage.dataset.srcset) {
+                    lazyImage.srcset = lazyImage.dataset.srcset;
+                }
+                lazyImage.classList.remove('lazy');
+            });
+        }, 500);
+    }
+    
+    // Обработка ошибок загрузки изображений
+    document.querySelectorAll('img').forEach(img => {
+        img.addEventListener('error', function() {
+            // Если изображение не загружается, устанавливаем запасное
+            this.src = 'img/fallback-image.jpg';
+            this.alt = 'Изображение временно недоступно';
+        });
+    });
+    
+    // Добавляем атрибуты lang для улучшения SEO
+    const htmlElement = document.querySelector('html');
+    if (htmlElement && !htmlElement.getAttribute('lang')) {
+        htmlElement.setAttribute('lang', 'ru');
+    }
+    
+    // Обнаружение устройства для оптимизации контента
+    const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+    if (isMobile) {
+        document.body.classList.add('mobile-device');
     }
 });
 
-// Добавляем атрибуты schema.org для продуктов динамически
-const enhanceProductCards = () => {
-    const productCards = document.querySelectorAll('.product-card');
-    
-    productCards.forEach(card => {
-        // Проверяем, есть ли у карточки уже атрибуты schema.org
-        if (!card.hasAttribute('itemscope')) {
-            card.setAttribute('itemscope', '');
-            card.setAttribute('itemtype', 'https://schema.org/Product');
-            
-            // Находим элементы карточки для улучшения разметки
-            const image = card.querySelector('.product-image');
-            const title = card.querySelector('.product-title');
-            const description = card.querySelector('.product-description');
-            const price = card.querySelector('.product-price');
-            
-            if (image && !image.hasAttribute('itemprop')) {
-                image.setAttribute('itemprop', 'image');
-            }
-            
-            if (title && !title.hasAttribute('itemprop')) {
-                title.setAttribute('itemprop', 'name');
-            }
-            
-            if (description && !description.hasAttribute('itemprop')) {
-                description.setAttribute('itemprop', 'description');
-            }
-            
-            if (price && !price.hasAttribute('itemprop')) {
-                // Оборачиваем price в offers схему
-                const priceValue = price.textContent.replace('$', '');
-                
-                // Создаем элементы микроразметки для цены
-                const offersWrapper = document.createElement('div');
-                offersWrapper.setAttribute('itemprop', 'offers');
-                offersWrapper.setAttribute('itemscope', '');
-                offersWrapper.setAttribute('itemtype', 'https://schema.org/Offer');
-                
-                const priceCurrency = document.createElement('meta');
-                priceCurrency.setAttribute('itemprop', 'priceCurrency');
-                priceCurrency.setAttribute('content', 'USD');
-                
-                const priceItem = document.createElement('meta');
-                priceItem.setAttribute('itemprop', 'price');
-                priceItem.setAttribute('content', priceValue);
-                
-                const availability = document.createElement('link');
-                availability.setAttribute('itemprop', 'availability');
-                availability.setAttribute('href', 'https://schema.org/InStock');
-                
-                // Вставляем элементы в DOM
-                offersWrapper.appendChild(price.cloneNode(true));
-                offersWrapper.appendChild(priceCurrency);
-                offersWrapper.appendChild(priceItem);
-                offersWrapper.appendChild(availability);
-                
-                // Заменяем элемент цены разметкой schema.org
-                price.parentNode.replaceChild(offersWrapper, price);
-            }
-            
-            // Удаляем рейтинг, если он есть
-            const ratingElement = card.querySelector('.product-rating');
-            if (ratingElement) {
-                ratingElement.style.display = 'none';
-            }
-            
-            // Удаляем старую цену (скидку), если она есть
-            const oldPriceElement = card.querySelector('.product-old-price');
-            if (oldPriceElement) {
-                oldPriceElement.style.display = 'none';
-            }
-        }
-    });
-};
+// Обработка канонических ссылок для страниц с параметрами
+function handleCanonicalUrl() {
+    const url = new URL(window.location.href);
+    if (url.search) {
+        // Если есть параметры в URL, добавляем каноническую ссылку
+        let link = document.createElement('link');
+        link.rel = 'canonical';
+        link.href = url.origin + url.pathname;
+        document.head.appendChild(link);
+    }
+}
 
-// Запускаем улучшение разметки Schema.org при загрузке страницы
-document.addEventListener('DOMContentLoaded', enhanceProductCards);
+// Установка метрики производительности с помощью Performance API
+function reportWebVitals() {
+    if ('performance' in window && 'PerformanceObserver' in window) {
+        const observer = new PerformanceObserver((list) => {
+            list.getEntries().forEach((entry) => {
+                // Отправка данных о производительности (фактически будут отправляться на сервер аналитики)
+                console.log(`[Performance]: ${entry.name} - ${entry.startTime.toFixed(0)}ms`);
+            });
+        });
+        
+        observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input-delay', 'cumulative-layout-shift'] });
+    }
+}
+
+// Вызов функций оптимизации
+handleCanonicalUrl();
+reportWebVitals();

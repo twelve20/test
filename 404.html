@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница не найдена | 404 ошибка | ColorVivo</title>
+    <meta name="description" content="Страница не найдена. Вернитесь на главную страницу ColorVivo и найдите нужную информацию о красках и декоративных покрытиях.">
+    <meta name="robots" content="noindex, follow">
+    <link rel="canonical" href="https://colorvivo.ru/404.html">
+    <meta name="theme-color" content="#D97D54">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Подключение стилей -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.4/css/all.min.css">
+    
+    <style>
+        .error-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 50px 20px;
+            background: linear-gradient(to bottom, #fff, #F5E8C7);
+            text-align: center;
+        }
+        
+        .error-logo {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 28px;
+            font-weight: 700;
+            color: #D97D54;
+            margin-bottom: 30px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .error-logo i {
+            margin-right: 12px;
+            font-size: 32px;
+        }
+        
+        .error-code {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 120px;
+            font-weight: 800;
+            color: #D97D54;
+            margin-bottom: 20px;
+            line-height: 1;
+            position: relative;
+        }
+        
+        .error-code::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: #D4AF37;
+            margin: 5px auto 0;
+        }
+        
+        .error-title {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 15px;
+        }
+        
+        .error-description {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            max-width: 600px;
+            line-height: 1.6;
+        }
+        
+        .error-links {
+            margin: 30px 0;
+        }
+        
+        .error-link {
+            display: inline-block;
+            margin: 0 15px;
+            color: #D97D54;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .error-link:hover {
+            color: #D4AF37;
+            transform: translateY(-3px);
+        }
+        
+        .error-link i {
+            margin-right: 5px;
+        }
+        
+        .error-home-btn {
+            display: inline-block;
+            padding: 15px 40px;
+            background-color: #D97D54;
+            color: white;
+            border: none;
+            border-radius: 30px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(217, 125, 84, 0.3);
+            text-decoration: none;
+        }
+        
+        .error-home-btn:hover {
+            background-color: #E89B78;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(217, 125, 84, 0.4);
+        }
+        
+        .error-decoration {
+            position: absolute;
+            opacity: 0.1;
+            z-index: -1;
+        }
+        
+        .error-decoration-1 {
+            top: 10%;
+            left: 5%;
+            transform: rotate(-15deg);
+            font-size: 80px;
+            color: #D97D54;
+        }
+        
+        .error-decoration-2 {
+            bottom: 15%;
+            right: 10%;
+            transform: rotate(20deg);
+            font-size: 90px;
+            color: #D4AF37;
+        }
+        
+        .paint-splash {
+            position: absolute;
+            z-index: -1;
+            opacity: 0.1;
+        }
+        
+        .paint-splash-1 {
+            top: 30%;
+            left: 10%;
+            transform: rotate(-15deg) scale(1.5);
+        }
+        
+        .paint-splash-2 {
+            bottom: 20%;
+            right: 15%;
+            transform: rotate(25deg) scale(1.2);
+        }
+        
+        @media (max-width: 768px) {
+            .error-code {
+                font-size: 100px;
+            }
+            
+            .error-title {
+                font-size: 28px;
+            }
+            
+            .error-description {
+                font-size: 16px;
+            }
+            
+            .error-decoration-1,
+            .error-decoration-2 {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .error-code {
+                font-size: 80px;
+            }
+            
+            .error-links {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .error-link {
+                margin: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="error-container">
+        <!-- Декоративные элементы -->
+        <i class="fas fa-paint-roller error-decoration error-decoration-1"></i>
+        <i class="fas fa-paint-brush error-decoration error-decoration-2"></i>
+        <svg class="paint-splash paint-splash-1" width="200" height="200" viewBox="0 0 200 200">
+            <path d="M22.1,35.4c.5,1.6,3.8,1.2,7.3-0.1C33,32,35.2,31.7,38.2,32.7c3,1.1,3.2,4,5.9,8.5 c4.5,7.6,11.5,2.8,11.5-4.3c0-7.9,7-3.4,10.9,1.6c2.6,3.3,8.9,2,13.3-2.7c5.6-6,11.8-3.9,16.9,0.4c3.7,3.2,8.8,1.3,11.1-2.3 c1.5-2.4,1.8-5.6,3.6-6c2.5-0.5,5.1,3.2,8.9,3.6c5.4,0.5,7.9-4.4,12.7-3.5c7.5,1.4,7.4,10.2,13.8,2.5c2.8-3.4,7.2-1.1,12.1,3.5 c4.1,3.8,7.2,2.8,7.5-2c0.2-4.2,5.5-1.8,9.2,1.6c3.3,3.1,4.6-3.6,0.9-7.4c-2.4-2.5-5.1-5.2-8.9-7.3c-3-1.7-8.1-1.7-11.7-1.8 c-4.3-0.1-6.5-0.2-8.4-0.8c-3.2-1-0.2-2,0.3-3c1.1-2.6-0.1-4.1-3.2-4c-3,0.1-4.5-1.6-5.3-3.3c-1.5-3.4-3.9-4.4-7.2-3.5 c-3,0.9-4.8-2.4-9.2-2.6c-5.8-0.3-4.8,4.1-7.8,3.5c-2.6-0.5-9-1.6-10.8-1.6c-1.7,0-3.4,0.9-5.1,1.9c-2.1,1.2-4.3,0-6.7-0.5 c-4-0.8-6.3,1.8-9,3.6c-3.4,2.3-7.2,0.5-10.6-0.8c-4.2-1.6-8.8,0.3-13.7,0.5c-5.7,0.2-9.1,2.9-13.7,6.6c-3.7,3-7.1,2.4-6.5-1.9 c0.4-3.2-4.5-0.9-7,0.9c-3.5,2.5-6.4,3.4-7.4,4.5c-1.9,1.9-5.5,3.4-8.1,5.4C19.8,31.4,21.6,33.8,22.1,35.4z" fill="#D97D54"/>
+        </svg>
+        <svg class="paint-splash paint-splash-2" width="200" height="200" viewBox="0 0 200 200">
+            <path d="M152.5,38.6c-1.6-0.5-1.2-3.8,0.1-7.3c1.3-3.6,1.6-5.8,0.6-8.8c-1.1-3-4-3.2-8.5-5.9 c-7.6-4.5-2.8-11.5,4.3-11.5c7.9,0,3.4-7-1.6-10.9c-3.3-2.6-2-8.9,2.7-13.3c6-5.6,3.9-11.8-0.4-16.9c-3.2-3.7-1.3-8.8,2.3-11.1 c2.4-1.5,5.6-1.8,6-3.6c0.5-2.5-3.2-5.1-3.6-8.9c-0.5-5.4,4.4-7.9,3.5-12.7c-1.4-7.5-10.2-7.4-2.5-13.8c3.4-2.8,1.1-7.2-3.5-12.1 c-3.8-4.1-2.8-7.2,2-7.5c4.2-0.2,1.8-5.5-1.6-9.2c-3.1-3.3,3.6-4.6,7.4-0.9c2.5,2.4,5.2,5.1,7.3,8.9c1.7,3,1.7,8.1,1.8,11.7 c0.1,4.3,0.2,6.5,0.8,8.4c1,3.2,2,0.2,3-0.3c2.6-1.1,4.1,0.1,4,3.2c-0.1,3,1.6,4.5,3.3,5.3c3.4,1.5,4.4,3.9,3.5,7.2 c-0.9,3,2.4,4.8,2.6,9.2c0.3,5.8-4.1,4.8-3.5,7.8c0.5,2.6,1.6,9,1.6,10.8c0,1.7-0.9,3.4-1.9,5.1c-1.2,2.1,0,4.3,0.5,6.7 c0.8,4-1.8,6.3-3.6,9c-2.3,3.4-0.5,7.2,0.8,10.6c1.6,4.2-0.3,8.8-0.5,13.7c-0.2,5.7-2.9,9.1-6.6,13.7c-3,3.7-2.4,7.1,1.9,6.5 c3.2-0.4,0.9,4.5-0.9,7c-2.5,3.5-3.4,6.4-4.5,7.4c-1.9,1.9-3.4,5.5-5.4,8.1C156.5,40.9,154.1,39.1,152.5,38.6z" fill="#D4AF37"/>
+        </svg>
+        
+        <!-- Содержимое ошибки 404 -->
+        <div class="error-logo">
+            <i class="fas fa-paint-brush"></i> ColorVivo
+        </div>
+        
+        <div class="error-code">404</div>
+        <h1 class="error-title">Страница не найдена</h1>
+        <p class="error-description">Упс! Кажется, вы искали страницу, которой не существует или она была перемещена. Вернитесь на главную или воспользуйтесь одной из полезных ссылок ниже.</p>
+        
+        <a href="/" class="error-home-btn">Вернуться на главную</a>
+        
+        <div class="error-links">
+            <a href="/products/" class="error-link"><i class="fas fa-paint-roller"></i> Наши продукты</a>
+            <a href="/contacts/" class="error-link"><i class="fas fa-envelope"></i> Связаться с нами</a>
+            <a href="/gallery/" class="error-link"><i class="fas fa-images"></i> Галерея работ</a>
+        </div>
+    </div>
+</body>
+</html> 

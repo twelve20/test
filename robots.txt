@@ -51,6 +51,13 @@ Allow: /
 Allow: /sitemap.xml
 Disallow: /admin/
 Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /search?*
 Clean-param: utm_source&utm_medium&utm_campaign
 Clean-param: yclid
 
@@ -60,6 +67,13 @@ Allow: /
 Allow: /sitemap.xml
 Disallow: /admin/
 Disallow: /cgi-bin/
+Disallow: /tmp/
+Disallow: /*.pdf$
+Disallow: /*.doc$
+Disallow: /*.docx$
+Disallow: /*.xls$
+Disallow: /*.xlsx$
+Disallow: /search?*
 
 # Правила для Bing
 User-agent: Bingbot
