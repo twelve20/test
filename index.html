@@ -368,6 +368,9 @@
                         <meta itemprop="brand" itemscope itemtype="https://schema.org/Brand">
                         <meta itemprop="name" content="ColorVivo">
                         <div class="product-actions">
+                            <button class="btn btn-details">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
                             <button class="btn btn-order">
                                 <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
@@ -447,6 +450,9 @@
                         <meta itemprop="brand" itemscope itemtype="https://schema.org/Brand">
                         <meta itemprop="name" content="ColorVivo">
                         <div class="product-actions">
+                            <button class="btn btn-details">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
                             <button class="btn btn-order">
                                 <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
@@ -526,6 +532,9 @@
                         <meta itemprop="brand" itemscope itemtype="https://schema.org/Brand">
                         <meta itemprop="name" content="ColorVivo">
                         <div class="product-actions">
+                            <button class="btn btn-details">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
                             <button class="btn btn-order">
                                 <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
@@ -606,6 +615,9 @@
                         <meta itemprop="brand" itemscope itemtype="https://schema.org/Brand">
                         <meta itemprop="name" content="ColorVivo">
                         <div class="product-actions">
+                            <button class="btn btn-details">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
                             <button class="btn btn-order">
                                 <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
@@ -669,6 +681,9 @@
                         </div>
                         <p class="product-description">Элитное покрытие с эффектом шелка, создающее изысканные переливы света.</p>
                         <div class="product-actions">
+                            <button class="btn btn-details">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
                             <button class="btn btn-order">
                                 <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
@@ -698,6 +713,9 @@
                         </div>
                         <p class="product-description">Высокопрочная эмаль с защитой от влаги и УФ-лучей для внутренних и наружных работ.</p>
                         <div class="product-actions">
+                            <button class="btn btn-details">
+                                <i class="fas fa-info-circle"></i> Подробнее
+                            </button>
                             <button class="btn btn-order">
                                 <i class="fas fa-shopping-bag"></i> Оформить заказ
                             </button>
@@ -903,12 +921,12 @@
                                 <li class="hours-item">
                                     <meta itemprop="dayOfWeek" content="https://schema.org/Monday https://schema.org/Tuesday https://schema.org/Wednesday https://schema.org/Thursday https://schema.org/Friday">
                                     <span>Понедельник - Пятница:</span>
-                                    <span itemprop="opens" content="09:00">9:00</span> - <span itemprop="closes" content="18:00">18:00</span>
+                                    <span><span itemprop="opens" content="09:00">9:00</span> - <span itemprop="closes" content="18:00">18:00</span></span>
                                 </li>
                                 <li class="hours-item">
                                     <meta itemprop="dayOfWeek" content="https://schema.org/Saturday">
                                     <span>Суббота:</span>
-                                    <span itemprop="opens" content="10:00">10:00</span> - <span itemprop="closes" content="16:00">16:00</span>
+                                    <span><span itemprop="opens" content="10:00">10:00</span> - <span itemprop="closes" content="16:00">16:00</span></span>
                                 </li>
                                 <li class="hours-item">
                                     <meta itemprop="dayOfWeek" content="https://schema.org/Sunday">
@@ -975,11 +993,13 @@
                                 <option value="cooperation">Сотрудничество</option>
                                 <option value="other">Другое</option>
                             </select>
+                            <i class="fas fa-chevron-down input-icon"></i>
                         </div>
                         
                         <div class="form-group">
                             <label for="message">Сообщение <span class="form-required">*</span></label>
                             <textarea id="message" name="message" required></textarea>
+                            <i class="far fa-comment input-icon"></i>
                         </div>
                         
                         <div class="form-actions">
@@ -1193,6 +1213,40 @@
                     </div>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <!-- Модальное окно подробной информации о товаре -->
+    <div class="product-details-modal" id="productDetailsModal" style="display: none;" role="dialog" aria-labelledby="productDetailsModalTitle" aria-hidden="true">
+        <div class="product-details-content">
+            <span class="product-details-close" role="button" aria-label="Закрыть">&times;</span>
+            <h2 class="product-details-title" id="productDetailsModalTitle"></h2>
+            
+            <div class="product-details-container">
+                <div class="product-details-image">
+                    <img id="productDetailsImage" src="" alt="Изображение товара">
+                </div>
+                <div class="product-details-info">
+                    <div class="product-details-price-container">
+                        <span class="product-details-price" id="productDetailsPrice"></span>
+                        <span class="product-details-old-price" id="productDetailsOldPrice"></span>
+                    </div>
+                    <div class="product-details-rating" id="productDetailsRating" style="display: none;">
+                    </div>
+                    <div class="product-details-description" id="productDetailsDescription"></div>
+                    <div class="product-details-action">
+                        <button class="product-details-order-btn" id="productDetailsOrderBtn">
+                            <i class="fas fa-shopping-bag"></i> Оформить заказ
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-details-features">
+                <h3>Ключевые особенности</h3>
+                <ul id="productDetailsFeatures">
+                </ul>
+            </div>
         </div>
     </div>
 

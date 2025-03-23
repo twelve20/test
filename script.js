@@ -192,6 +192,41 @@ document.addEventListener('DOMContentLoaded', function() {
     const orderTotalPrice = document.getElementById('orderTotalPrice');
     const orderQuantityInput = document.getElementById('orderQuantity');
     
+    // Получаем элементы модального окна с подробной информацией о товаре
+    const productDetailsModal = document.getElementById('productDetailsModal');
+    const productDetailsCloseBtn = document.querySelector('.product-details-close');
+    const productDetailsTitle = document.getElementById('productDetailsModalTitle');
+    const productDetailsImage = document.getElementById('productDetailsImage');
+    const productDetailsPrice = document.getElementById('productDetailsPrice');
+    const productDetailsOldPrice = document.getElementById('productDetailsOldPrice');
+    const productDetailsRating = document.getElementById('productDetailsRating');
+    const productDetailsDescription = document.getElementById('productDetailsDescription');
+    const productDetailsOrderBtn = document.getElementById('productDetailsOrderBtn');
+    const productDetailsFeatures = document.getElementById('productDetailsFeatures');
+    
+    // Массив особенностей товаров по категориям
+    const productFeatures = {
+        'plaster': [
+            'Экологически чистый состав',
+            'Высокая паропроницаемость',
+            'Возможность создания различных фактур',
+            'Эффективная звукоизоляция',
+            'Устойчивость к механическим повреждениям',
+            'Долговечность (до 20 лет без ремонта)'
+        ],
+        'paint': [
+            'Быстрое высыхание',
+            'Устойчивость к истиранию и влаге',
+            'Высокая укрывистость',
+            'Простота нанесения',
+            'Без запаха',
+            'Широкая цветовая гамма'
+        ]
+    };
+    
+    // Получаем все кнопки "Подробнее"
+    const detailsButtons = document.querySelectorAll('.btn-details');
+    
     // Получаем все кнопки "Оформить заказ"
     const orderButtons = document.querySelectorAll('.btn-order');
     
@@ -200,6 +235,116 @@ document.addEventListener('DOMContentLoaded', function() {
         const total = (price * quantity).toFixed(2);
         orderTotalPrice.textContent = '$' + total;
     }
+    
+    // Открытие модального окна с подробной информацией при клике на кнопку "Подробнее"
+    detailsButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const productCard = this.closest('.product-card');
+            const productImage = productCard.querySelector('.product-image').src;
+            const productTitle = productCard.querySelector('.product-title').textContent;
+            let productPrice = '';
+            let productOldPrice = '';
+            
+            // Получаем цену товара
+            const priceElement = productCard.querySelector('.product-price');
+            if (priceElement) {
+                productPrice = priceElement.textContent;
+            }
+            
+            // Получаем старую цену товара, если есть
+            const oldPriceElement = productCard.querySelector('.product-old-price');
+            if (oldPriceElement) {
+                productOldPrice = oldPriceElement.textContent;
+                productDetailsOldPrice.textContent = productOldPrice;
+                productDetailsOldPrice.style.display = 'none'; // Скрываем старую цену
+            } else {
+                productDetailsOldPrice.style.display = 'none';
+                productDetailsOldPrice.textContent = '';
+            }
+            
+            // Получаем описание товара
+            const productDescription = productCard.querySelector('.product-description').textContent;
+            
+            // Определяем категорию товара и выбираем соответствующие особенности
+            let features = [];
+            if (productCard.classList.contains('plaster')) {
+                features = productFeatures.plaster;
+            } else if (productCard.classList.contains('paint')) {
+                features = productFeatures.paint;
+            }
+            
+            // Генерируем рейтинг товара
+            let ratingHTML = '';
+            const ratingElement = productCard.querySelector('.product-rating');
+            if (ratingElement) {
+                // Клонируем элементы рейтинга
+                ratingHTML = ratingElement.innerHTML;
+            }
+            
+            // Заполняем данные товара в модальном окне
+            productDetailsTitle.textContent = productTitle;
+            productDetailsImage.src = productImage;
+            productDetailsPrice.textContent = productPrice;
+            productDetailsDescription.textContent = productDescription;
+            productDetailsRating.innerHTML = ratingHTML;
+            productDetailsRating.style.display = 'none'; // Скрываем рейтинг
+            
+            // Заполняем особенности товара
+            productDetailsFeatures.innerHTML = '';
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                productDetailsFeatures.appendChild(li);
+            });
+            
+            // Показываем модальное окно
+            productDetailsModal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+            
+            // Добавляем обработчик для кнопки "Оформить заказ" в модальном окне
+            productDetailsOrderBtn.onclick = function() {
+                // Закрываем текущее модальное окно
+                productDetailsModal.style.display = 'none';
+                
+                // Заполняем данные товара в модальном окне заказа
+                orderProductImage.src = productImage;
+                orderProductTitle.textContent = productTitle;
+                orderProductPrice.textContent = productPrice;
+                
+                // Устанавливаем начальное значение итоговой цены
+                const priceValue = parseFloat(productPrice.replace('$', ''));
+                updateTotalPrice(priceValue, 1);
+                
+                // Показываем модальное окно заказа
+                orderModal.style.display = 'flex';
+                
+                // Обновляем итоговую сумму при изменении количества
+                orderQuantityInput.onchange = function() {
+                    const quantity = parseInt(this.value) || 1;
+                    updateTotalPrice(priceValue, quantity);
+                };
+                
+                orderQuantityInput.oninput = function() {
+                    const quantity = parseInt(this.value) || 1;
+                    updateTotalPrice(priceValue, quantity);
+                };
+            };
+        });
+    });
+    
+    // Закрытие модального окна с подробной информацией при клике на крестик
+    productDetailsCloseBtn.addEventListener('click', function() {
+        productDetailsModal.style.display = 'none';
+        document.body.style.overflow = '';
+    });
+    
+    // Закрытие модального окна с подробной информацией при клике вне его содержимого
+    productDetailsModal.addEventListener('click', function(event) {
+        if (event.target === productDetailsModal) {
+            productDetailsModal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+    });
     
     // Открытие модального окна при клике на кнопку "Оформить заказ"
     orderButtons.forEach(button => {
@@ -251,9 +396,15 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Закрытие модального окна по клавише Escape
     document.addEventListener('keydown', function(event) {
-        if (event.key === 'Escape' && orderModal.style.display === 'flex') {
-            orderModal.style.display = 'none';
-            document.body.style.overflow = '';
+        if (event.key === 'Escape') {
+            if (orderModal.style.display === 'flex') {
+                orderModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
+            if (productDetailsModal.style.display === 'flex') {
+                productDetailsModal.style.display = 'none';
+                document.body.style.overflow = '';
+            }
         }
     });
     
@@ -629,6 +780,18 @@ const enhanceProductCards = () => {
                 
                 // Заменяем элемент цены разметкой schema.org
                 price.parentNode.replaceChild(offersWrapper, price);
+            }
+            
+            // Удаляем рейтинг, если он есть
+            const ratingElement = card.querySelector('.product-rating');
+            if (ratingElement) {
+                ratingElement.style.display = 'none';
+            }
+            
+            // Удаляем старую цену (скидку), если она есть
+            const oldPriceElement = card.querySelector('.product-old-price');
+            if (oldPriceElement) {
+                oldPriceElement.style.display = 'none';
             }
         }
     });
