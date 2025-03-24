@@ -155,31 +155,6 @@ window.addEventListener('scroll', () => {
     }
 });
 
-// Фильтрация продуктов по категории
-const filterCategoryBtns = document.querySelectorAll('.filter-btn[data-filter]');
-const productCards = document.querySelectorAll('.product-card');
-
-filterCategoryBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        // Сначала удаляем активный класс со всех кнопок
-        filterCategoryBtns.forEach(b => b.classList.remove('active'));
-        // Добавляем активный класс текущей кнопке
-        btn.classList.add('active');
-
-        const filterValue = btn.getAttribute('data-filter');
-
-        productCards.forEach(card => {
-            if (filterValue === 'all') {
-                card.classList.remove('hidden');
-            } else if (card.classList.contains(filterValue)) {
-                card.classList.remove('hidden');
-            } else {
-                card.classList.add('hidden');
-            }
-        });
-    });
-});
-
 // Удаление кода для кнопок wishlist и добавление функционала для модального окна заказа
 document.addEventListener('DOMContentLoaded', function() {
     // Получаем элементы модального окна заказа
@@ -202,6 +177,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const productDetailsRating = document.getElementById('productDetailsRating');
     const productDetailsDescription = document.getElementById('productDetailsDescription');
     const productDetailsOrderBtn = document.getElementById('productDetailsOrderBtn');
+    const productDetailsDownloadBtn = document.getElementById('productDetailsDownloadBtn');
     const productDetailsFeatures = document.getElementById('productDetailsFeatures');
     
     // Массив особенностей товаров по категориям
@@ -213,6 +189,16 @@ document.addEventListener('DOMContentLoaded', function() {
             'Эффективная звукоизоляция',
             'Устойчивость к механическим повреждениям',
             'Долговечность (до 20 лет без ремонта)'
+        ],
+        'facade': [
+            'Для систем теплоизоляции фасадов',
+            'Устойчивость к УФ-лучам',
+            'Эффект самоочищения',
+            'Высокая паропроницаемость',
+            'Водоотталкивающий эффект',
+            'Защита от грибка и плесени',
+            'Устойчивость к ударным воздействиям',
+            'Морозостойкость'
         ],
         'paint': [
             'Быстрое высыхание',
@@ -269,6 +255,8 @@ document.addEventListener('DOMContentLoaded', function() {
             let features = [];
             if (productCard.classList.contains('plaster')) {
                 features = productFeatures.plaster;
+            } else if (productCard.classList.contains('facade')) {
+                features = productFeatures.facade;
             } else if (productCard.classList.contains('paint')) {
                 features = productFeatures.paint;
             }
@@ -328,6 +316,27 @@ document.addEventListener('DOMContentLoaded', function() {
                     const quantity = parseInt(this.value) || 1;
                     updateTotalPrice(priceValue, quantity);
                 };
+            };
+            
+            // Добавляем обработчик для кнопки "Скачать тех. лист" в модальном окне
+            productDetailsDownloadBtn.onclick = function() {
+                // Использование реального файла из папки files
+                const fileUrl = 'files/artfasadsilicatesilicone.pdf';
+                
+                // Создаем временную ссылку для скачивания
+                const downloadLink = document.createElement('a');
+                downloadLink.href = fileUrl;
+                downloadLink.download = 'Технический_лист_фасадная_штукатурка.pdf';
+                downloadLink.target = '_blank';
+                document.body.appendChild(downloadLink);
+                
+                // Запускаем скачивание
+                downloadLink.click();
+                
+                // Удаляем временную ссылку
+                setTimeout(() => {
+                    document.body.removeChild(downloadLink);
+                }, 100);
             };
         });
     });

@@ -290,8 +290,8 @@
                     <ul>
                         <li><a href="#hero" class="active"><i class="fas fa-home"></i> Главная</a></li>
                         <li><a href="#products"><i class="fas fa-swatchbook"></i> Продукты</a></li>
-                        <li><a href="#gallery"><i class="fas fa-images"></i> Галерея</a></li>
                         <li><a href="#testimonials"><i class="fas fa-comment-alt"></i> Отзывы</a></li>
+                        <li><a href="#gallery"><i class="fas fa-images"></i> Галерея</a></li>
                         <li><a href="#contacts"><i class="fas fa-envelope"></i> Контакты</a></li>
                     </ul>
                     <div class="nav-icons">
@@ -362,200 +362,21 @@
     <section id="products" itemscope itemtype="https://schema.org/ItemList">
         <div class="container products-container">
             <h2 itemprop="name">Наши продукты</h2>
-            <p class="products-subtitle" itemprop="description">Широкий ассортимент высококачественных декоративных покрытий для создания уникальных интерьеров</p>
-            
-            <div class="filter-container">
-                <div class="filter">
-                    <button class="filter-btn active" data-filter="all">
-                        <i class="fas fa-th-large"></i> Все товары
-                    </button>
-                    <button class="filter-btn" data-filter="plaster">
-                        <i class="fas fa-brush"></i> Штукатурка
-                    </button>
-                    <button class="filter-btn" data-filter="paint">
-                        <i class="fas fa-fill-drip"></i> Краски
-                    </button>
-                </div>
-            </div>
+            <p class="products-subtitle" itemprop="description">Высококачественные декоративные покрытия для создания уникальных интерьеров</p>
             
             <div class="products-grid">
-                <div class="product-card plaster" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
+                <div class="product-card facade" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
                     <div class="product-category">
                         <i class="fas fa-brush"></i>
                     </div>
                     <div class="product-image-container">
-                        <img src="img/products/venetian-plaster.webp" alt="Венецианская штукатурка - декоративное покрытие для эффекта мрамора и натурального камня от ColorVivo" class="product-image" loading="lazy" width="400" height="300">
+                        <img src="img/products/artfasadSS.webp" alt="Штукатурка фасадная декоративная силикатно-силиконовая" class="product-image" loading="lazy" width="500" height="400" itemprop="image">
                     </div>
                     <div class="product-info">
-                        <h3 class="product-title" itemprop="name">Венецианская штукатурка</h3>
-                        <div class="product-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                            <meta itemprop="ratingValue" content="4.5">
-                            <meta itemprop="reviewCount" content="28">
-                            <meta itemprop="bestRating" content="5">
-                            <meta itemprop="worstRating" content="1">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <span class="rating-count">(28 отзывов)</span>
-                        </div>
-                        <div class="product-price-container">
-                            <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                                <meta itemprop="priceCurrency" content="USD">
-                                <span itemprop="price" content="25">$25</span>
-                                <meta itemprop="priceValidUntil" content="2024-12-31">
-                                <link itemprop="availability" href="https://schema.org/InStock">
-                                <link itemprop="url" href="https://colorvivo.ru/products/venetian-plaster">
-                            </span>
-                            <span class="product-old-price">$30</span>
-                        </div>
-                        <p class="product-description" itemprop="description">Классическое декоративное покрытие для создания эффекта мрамора и натурального камня.</p>
-                        <meta itemprop="sku" content="VEN-01">
-                        <meta itemprop="mpn" content="VEN-CL-01">
-                        <meta itemprop="category" content="Декоративная штукатурка">
-                        <meta itemprop="brand" itemscope itemtype="https://schema.org/Brand">
-                        <meta itemprop="name" content="ColorVivo">
-                        <div class="product-actions">
-                            <button class="btn btn-details">
-                                <i class="fas fa-info-circle"></i> Подробнее
-                            </button>
-                            <button class="btn btn-order">
-                                <i class="fas fa-shopping-bag"></i> Оформить заказ
-                            </button>
-                        </div>
-                    </div>
-                    <script type="application/ld+json">
-                    {
-                      "@context": "https://schema.org",
-                      "@type": "Product",
-                      "name": "Венецианская штукатурка",
-                      "image": "https://via.placeholder.com/400x300?text=Венецианская+штукатурка",
-                      "description": "Классическое декоративное покрытие для создания эффекта мрамора и натурального камня.",
-                      "sku": "VEN-01",
-                      "mpn": "VEN-CL-01",
-                      "brand": {
-                        "@type": "Brand",
-                        "name": "ColorVivo"
-                      },
-                      "category": "Декоративная штукатурка",
-                      "offers": {
-                        "@type": "Offer",
-                        "url": "https://colorvivo.ru/products/venetian-plaster",
-                        "priceCurrency": "USD",
-                        "price": "25",
-                        "priceValidUntil": "2024-12-31",
-                        "availability": "https://schema.org/InStock",
-                        "seller": {
-                          "@type": "Organization",
-                          "name": "ColorVivo"
-                        }
-                      },
-                      "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "4.5",
-                        "reviewCount": "28",
-                        "bestRating": "5",
-                        "worstRating": "1"
-                      }
-                    }
-                    </script>
-                </div>
-                
-                <div class="product-card paint" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
-                    <div class="product-category">
-                        <i class="fas fa-fill-drip"></i>
-                    </div>
-                    <div class="product-image-container">
-                        <img src="img/products/matte-paint.webp" alt="Матовая краска ColorVivo премиум-класса для внутренних работ" class="product-image" itemprop="image" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title" itemprop="name">Матовая краска</h3>
-                        <div class="product-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                            <meta itemprop="ratingValue" content="4.0">
-                            <meta itemprop="reviewCount" content="22">
-                            <meta itemprop="bestRating" content="5">
-                            <meta itemprop="worstRating" content="1">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-count">(22 отзыва)</span>
-                        </div>
-                        <div class="product-price-container">
-                            <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                                <meta itemprop="priceCurrency" content="USD">
-                                <span itemprop="price" content="15">$15</span>
-                                <meta itemprop="priceValidUntil" content="2024-12-31">
-                                <link itemprop="availability" href="https://schema.org/InStock">
-                                <link itemprop="url" href="https://colorvivo.ru/products/matte-paint">
-                            </span>
-                        </div>
-                        <p class="product-description" itemprop="description">Премиальная матовая краска, создающая благородное покрытие с высокой устойчивостью.</p>
-                        <meta itemprop="sku" content="MT-01">
-                        <meta itemprop="mpn" content="MT-CL-01">
-                        <meta itemprop="category" content="Краски">
-                        <meta itemprop="brand" itemscope itemtype="https://schema.org/Brand">
-                        <meta itemprop="name" content="ColorVivo">
-                        <div class="product-actions">
-                            <button class="btn btn-details">
-                                <i class="fas fa-info-circle"></i> Подробнее
-                            </button>
-                            <button class="btn btn-order">
-                                <i class="fas fa-shopping-bag"></i> Оформить заказ
-                            </button>
-                        </div>
-                    </div>
-                    <script type="application/ld+json">
-                    {
-                      "@context": "https://schema.org",
-                      "@type": "Product",
-                      "name": "Матовая краска",
-                      "image": "https://via.placeholder.com/400x300?text=Матовая+краска",
-                      "description": "Премиальная матовая краска, создающая благородное покрытие с высокой устойчивостью.",
-                      "sku": "MT-01",
-                      "mpn": "MT-CL-01",
-                      "brand": {
-                        "@type": "Brand",
-                        "name": "ColorVivo"
-                      },
-                      "category": "Краски",
-                      "offers": {
-                        "@type": "Offer",
-                        "url": "https://colorvivo.ru/products/matte-paint",
-                        "priceCurrency": "USD",
-                        "price": "15",
-                        "priceValidUntil": "2024-12-31",
-                        "availability": "https://schema.org/InStock",
-                        "seller": {
-                          "@type": "Organization",
-                          "name": "ColorVivo"
-                        }
-                      },
-                      "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "4.0",
-                        "reviewCount": "22",
-                        "bestRating": "5",
-                        "worstRating": "1"
-                      }
-                    }
-                    </script>
-                </div>
-                
-                <div class="product-card plaster" itemprop="itemListElement" itemscope itemtype="https://schema.org/Product">
-                    <div class="product-category">
-                        <i class="fas fa-brush"></i>
-                    </div>
-                    <div class="product-image-container">
-                        <img src="img/products/textured-plaster.webp" alt="Текстурная штукатурка - материал для создания эффектных фактурных поверхностей от ColorVivo" class="product-image" loading="lazy" width="400" height="300">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title" itemprop="name">Текстурная штукатурка</h3>
+                        <h3 class="product-title" itemprop="name">Штукатурка фасадная декоративная</h3>
                         <div class="product-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
                             <meta itemprop="ratingValue" content="5.0">
-                            <meta itemprop="reviewCount" content="35">
+                            <meta itemprop="reviewCount" content="12">
                             <meta itemprop="bestRating" content="5">
                             <meta itemprop="worstRating" content="1">
                             <i class="fas fa-star"></i>
@@ -563,21 +384,19 @@
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
-                            <span class="rating-count">(35 отзывов)</span>
                         </div>
                         <div class="product-price-container">
                             <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                                <meta itemprop="priceCurrency" content="USD">
-                                <span itemprop="price" content="30">$30</span>
+                                <meta itemprop="priceCurrency" content="RUB">
+                                <span itemprop="price" content="4108">4108₽</span>
                                 <meta itemprop="priceValidUntil" content="2024-12-31">
                                 <link itemprop="availability" href="https://schema.org/InStock">
-                                <link itemprop="url" href="https://colorvivo.ru/products/textured-plaster">
                             </span>
                         </div>
-                        <p class="product-description" itemprop="description">Декоративная штукатурка с рельефной поверхностью для создания уникальных фактур.</p>
-                        <meta itemprop="sku" content="TX-01">
-                        <meta itemprop="mpn" content="TX-CL-01">
-                        <meta itemprop="category" content="Декоративная штукатурка">
+                        <p class="product-description" itemprop="description">Силикатно-силиконовая штукатурка для внутренних и наружных работ. Подходит для систем теплоизоляции фасадов.</p>
+                        <meta itemprop="sku" content="ART-SS-01">
+                        <meta itemprop="mpn" content="ART-SS-CL-01">
+                        <meta itemprop="category" content="Фасадные покрытия">
                         <meta itemprop="brand" itemscope itemtype="https://schema.org/Brand">
                         <meta itemprop="name" content="ColorVivo">
                         <div class="product-actions">
@@ -593,21 +412,20 @@
                     {
                       "@context": "https://schema.org",
                       "@type": "Product",
-                      "name": "Текстурная штукатурка",
-                      "image": "https://via.placeholder.com/400x300?text=Текстурная+штукатурка",
-                      "description": "Декоративная штукатурка с рельефной поверхностью для создания уникальных фактур.",
-                      "sku": "TX-01",
-                      "mpn": "TX-CL-01",
+                      "name": "Штукатурка фасадная декоративная",
+                      "image": "img/products/artfasadSS.webp",
+                      "description": "Силикатно-силиконовая штукатурка для внутренних и наружных работ. Подходит для систем теплоизоляции фасадов.",
+                      "sku": "ART-SS-01",
+                      "mpn": "ART-SS-CL-01",
                       "brand": {
                         "@type": "Brand",
                         "name": "ColorVivo"
                       },
-                      "category": "Декоративная штукатурка",
+                      "category": "Фасадные покрытия",
                       "offers": {
                         "@type": "Offer",
-                        "url": "https://colorvivo.ru/products/textured-plaster",
-                        "priceCurrency": "USD",
-                        "price": "30",
+                        "priceCurrency": "RUB",
+                        "price": "4108",
                         "priceValidUntil": "2024-12-31",
                         "availability": "https://schema.org/InStock",
                         "seller": {
@@ -618,158 +436,12 @@
                       "aggregateRating": {
                         "@type": "AggregateRating",
                         "ratingValue": "5.0",
-                        "reviewCount": "35",
+                        "reviewCount": "12",
                         "bestRating": "5",
                         "worstRating": "1"
                       }
                     }
                     </script>
-                </div>
-                
-                <div class="product-card paint" itemscope itemtype="https://schema.org/Product">
-                    <div class="product-category">
-                        <i class="fas fa-fill-drip"></i>
-                    </div>
-                    <div class="product-image-container">
-                        <img src="img/products/gloss-paint.webp" alt="Глянцевая краска ColorVivo для создания ззеркального эффекта" class="product-image" itemprop="image" loading="lazy">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title" itemprop="name">Глянцевая краска</h3>
-                        <div class="product-rating" itemprop="aggregateRating" itemscope itemtype="https://schema.org/AggregateRating">
-                            <meta itemprop="ratingValue" content="3.5">
-                            <meta itemprop="reviewCount" content="19">
-                            <meta itemprop="bestRating" content="5">
-                            <meta itemprop="worstRating" content="1">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star-half-alt"></i>
-                            <i class="far fa-star"></i>
-                            <span class="rating-count">(19 отзывов)</span>
-                        </div>
-                        <div class="product-price-container">
-                            <span class="product-price" itemprop="offers" itemscope itemtype="https://schema.org/Offer">
-                                <meta itemprop="priceCurrency" content="USD">
-                                <span itemprop="price" content="18">$18</span>
-                                <meta itemprop="priceValidUntil" content="2024-12-31">
-                                <link itemprop="availability" href="https://schema.org/InStock">
-                                <link itemprop="url" href="https://colorvivo.ru/products/gloss-paint">
-                            </span>
-                            <span class="product-old-price">$22</span>
-                        </div>
-                        <p class="product-description" itemprop="description">Глянцевая краска для создания зеркального эффекта и сияющих поверхностей.</p>
-                        <meta itemprop="sku" content="GL-01">
-                        <meta itemprop="mpn" content="GL-CL-01">
-                        <meta itemprop="category" content="Краски">
-                        <meta itemprop="brand" itemscope itemtype="https://schema.org/Brand">
-                        <meta itemprop="name" content="ColorVivo">
-                        <div class="product-actions">
-                            <button class="btn btn-details">
-                                <i class="fas fa-info-circle"></i> Подробнее
-                            </button>
-                            <button class="btn btn-order">
-                                <i class="fas fa-shopping-bag"></i> Оформить заказ
-                            </button>
-                        </div>
-                    </div>
-                    <script type="application/ld+json">
-                    {
-                      "@context": "https://schema.org",
-                      "@type": "Product",
-                      "name": "Глянцевая краска",
-                      "image": "https://via.placeholder.com/400x300?text=Глянцевая+краска",
-                      "description": "Глянцевая краска для создания зеркального эффекта и сияющих поверхностей.",
-                      "sku": "GL-01",
-                      "mpn": "GL-CL-01",
-                      "brand": {
-                        "@type": "Brand",
-                        "name": "ColorVivo"
-                      },
-                      "category": "Краски",
-                      "offers": {
-                        "@type": "Offer",
-                        "url": "https://colorvivo.ru/products/gloss-paint",
-                        "priceCurrency": "USD",
-                        "price": "18",
-                        "priceValidUntil": "2024-12-31",
-                        "availability": "https://schema.org/InStock",
-                        "seller": {
-                          "@type": "Organization",
-                          "name": "ColorVivo"
-                        }
-                      },
-                      "aggregateRating": {
-                        "@type": "AggregateRating",
-                        "ratingValue": "3.5",
-                        "reviewCount": "19",
-                        "bestRating": "5",
-                        "worstRating": "1"
-                      }
-                    }
-                    </script>
-                </div>
-                
-                <div class="product-card plaster">
-                    <div class="product-category">
-                        <i class="fas fa-brush"></i>
-                    </div>
-                    <div class="product-image-container">
-                        <img src="img/products/silk-plaster.webp" alt="Шелковая штукатурка" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Шелковая штукатурка</h3>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <div class="product-price-container">
-                            <span class="product-price">$28</span>
-                        </div>
-                        <p class="product-description">Элитное покрытие с эффектом шелка, создающее изысканные переливы света.</p>
-                        <div class="product-actions">
-                            <button class="btn btn-details">
-                                <i class="fas fa-info-circle"></i> Подробнее
-                            </button>
-                            <button class="btn btn-order">
-                                <i class="fas fa-shopping-bag"></i> Оформить заказ
-                            </button>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="product-card paint">
-                    <div class="product-category">
-                        <i class="fas fa-fill-drip"></i>
-                    </div>
-                    <div class="product-image-container">
-                        <img src="img/products/enamel.webp" alt="Эмаль универсальная" class="product-image">
-                    </div>
-                    <div class="product-info">
-                        <h3 class="product-title">Эмаль универсальная</h3>
-                        <div class="product-rating">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="far fa-star"></i>
-                        </div>
-                        <div class="product-price-container">
-                            <span class="product-price">$20</span>
-                            <span class="product-old-price">$23</span>
-                        </div>
-                        <p class="product-description">Высокопрочная эмаль с защитой от влаги и УФ-лучей для внутренних и наружных работ.</p>
-                        <div class="product-actions">
-                            <button class="btn btn-details">
-                                <i class="fas fa-info-circle"></i> Подробнее
-                            </button>
-                            <button class="btn btn-order">
-                                <i class="fas fa-shopping-bag"></i> Оформить заказ
-                            </button>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
@@ -1286,6 +958,9 @@
                     <div class="product-details-action">
                         <button class="product-details-order-btn" id="productDetailsOrderBtn">
                             <i class="fas fa-shopping-bag"></i> Оформить заказ
+                        </button>
+                        <button class="product-details-download-btn" id="productDetailsDownloadBtn">
+                            <i class="fas fa-file-download"></i> Скачать тех. лист
                         </button>
                     </div>
                 </div>
