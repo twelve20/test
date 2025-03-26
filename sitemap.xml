@@ -9,147 +9,147 @@
                             http://www.google.com/schemas/sitemap-image/1.1
                             http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd">
   <url>
-    <loc>https://colorvivo.ru/</loc>
+    <loc>https://mega-decorative.ru/</loc>
     <lastmod>2024-04-12T14:30:00+03:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://colorvivo.ru/img/main-hero.jpg</image:loc>
-      <image:title>ColorVivo - магазин декоративных красок и штукатурки</image:title>
+      <image:loc>https://mega-decorative.ru/img/main-hero.jpg</image:loc>
+      <image:title>Мега Декор - магазин декоративных красок и штукатурки</image:title>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/products</loc>
+    <loc>https://mega-decorative.ru/products</loc>
     <lastmod>2024-04-12T14:30:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/products"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/products"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/products"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/products"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/gallery</loc>
+    <loc>https://mega-decorative.ru/gallery</loc>
     <lastmod>2024-04-12T14:30:00+03:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/gallery"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/gallery"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/gallery"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/gallery"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/testimonials</loc>
+    <loc>https://mega-decorative.ru/testimonials</loc>
     <lastmod>2024-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/testimonials"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/testimonials"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/testimonials"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/testimonials"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/contacts</loc>
+    <loc>https://mega-decorative.ru/contacts</loc>
     <lastmod>2024-04-12T14:30:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/contacts"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/contacts"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/contacts"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/contacts"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/products/venetian-plaster</loc>
+    <loc>https://mega-decorative.ru/products/venetian-plaster</loc>
     <lastmod>2024-03-15T10:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://colorvivo.ru/img/products/venetian-plaster.jpg</image:loc>
+      <image:loc>https://mega-decorative.ru/img/products/venetian-plaster.jpg</image:loc>
       <image:title>Венецианская штукатурка</image:title>
-      <image:caption>Венецианская штукатурка ColorVivo для создания эффекта мрамора</image:caption>
+      <image:caption>Венецианская штукатурка Мега Декор для создания эффекта мрамора</image:caption>
       <image:geo_location>Москва, Россия</image:geo_location>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/products/venetian-plaster"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/products/venetian-plaster"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/products/venetian-plaster"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/products/venetian-plaster"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/products/matte-paint</loc>
+    <loc>https://mega-decorative.ru/products/matte-paint</loc>
     <lastmod>2024-03-15T10:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://colorvivo.ru/img/products/matte-paint.jpg</image:loc>
+      <image:loc>https://mega-decorative.ru/img/products/matte-paint.jpg</image:loc>
       <image:title>Матовая краска</image:title>
-      <image:caption>Матовая краска ColorVivo премиум-класса для внутренних работ</image:caption>
+      <image:caption>Матовая краска Мега Декор премиум-класса для внутренних работ</image:caption>
       <image:geo_location>Москва, Россия</image:geo_location>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/products/matte-paint"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/products/matte-paint"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/products/matte-paint"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/products/matte-paint"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/products/textured-plaster</loc>
+    <loc>https://mega-decorative.ru/products/textured-plaster</loc>
     <lastmod>2024-03-15T10:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://colorvivo.ru/img/products/textured-plaster.jpg</image:loc>
+      <image:loc>https://mega-decorative.ru/img/products/textured-plaster.jpg</image:loc>
       <image:title>Текстурная штукатурка</image:title>
-      <image:caption>Текстурная штукатурка ColorVivo для создания рельефных поверхностей</image:caption>
+      <image:caption>Текстурная штукатурка Мега Декор для создания рельефных поверхностей</image:caption>
       <image:geo_location>Москва, Россия</image:geo_location>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/products/textured-plaster"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/products/textured-plaster"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/products/textured-plaster"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/products/textured-plaster"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/products/gloss-paint</loc>
+    <loc>https://mega-decorative.ru/products/gloss-paint</loc>
     <lastmod>2024-03-15T10:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://colorvivo.ru/img/products/gloss-paint.jpg</image:loc>
+      <image:loc>https://mega-decorative.ru/img/products/gloss-paint.jpg</image:loc>
       <image:title>Глянцевая краска</image:title>
-      <image:caption>Глянцевая краска ColorVivo для создания зеркального эффекта</image:caption>
+      <image:caption>Глянцевая краска Мега Декор для создания зеркального эффекта</image:caption>
       <image:geo_location>Москва, Россия</image:geo_location>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/products/gloss-paint"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/products/gloss-paint"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/products/gloss-paint"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/products/gloss-paint"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/products/silk-plaster</loc>
+    <loc>https://mega-decorative.ru/products/silk-plaster</loc>
     <lastmod>2024-03-15T10:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://colorvivo.ru/img/products/silk-plaster.jpg</image:loc>
+      <image:loc>https://mega-decorative.ru/img/products/silk-plaster.jpg</image:loc>
       <image:title>Шелковая штукатурка</image:title>
-      <image:caption>Шелковая штукатурка ColorVivo с эффектом переливов</image:caption>
+      <image:caption>Шелковая штукатурка Мега Декор с эффектом переливов</image:caption>
       <image:geo_location>Москва, Россия</image:geo_location>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/products/silk-plaster"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/products/silk-plaster"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/products/silk-plaster"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/products/silk-plaster"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/products/enamel</loc>
+    <loc>https://mega-decorative.ru/products/enamel</loc>
     <lastmod>2024-03-15T10:00:00+03:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://colorvivo.ru/img/products/enamel.jpg</image:loc>
+      <image:loc>https://mega-decorative.ru/img/products/enamel.jpg</image:loc>
       <image:title>Эмаль универсальная</image:title>
-      <image:caption>Универсальная эмаль ColorVivo для внутренних и наружных работ</image:caption>
+      <image:caption>Универсальная эмаль Мега Декор для внутренних и наружных работ</image:caption>
       <image:geo_location>Москва, Россия</image:geo_location>
     </image:image>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/products/enamel"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/products/enamel"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/products/enamel"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/products/enamel"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/blog</loc>
+    <loc>https://mega-decorative.ru/blog</loc>
     <lastmod>2024-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/blog"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/blog"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/blog"/>
   </url>
   <url>
-    <loc>https://colorvivo.ru/faq</loc>
+    <loc>https://mega-decorative.ru/faq</loc>
     <lastmod>2024-05-03</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://colorvivo.ru/faq"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://colorvivo.ru/en/faq"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://mega-decorative.ru/faq"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mega-decorative.ru/en/faq"/>
   </url>
 </urlset> 

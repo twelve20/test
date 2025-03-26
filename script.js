@@ -200,6 +200,16 @@ document.addEventListener('DOMContentLoaded', function() {
             'Устойчивость к ударным воздействиям',
             'Морозостойкость'
         ],
+        'interior': [
+            'Для внутренних работ',
+            'Эластичная структура',
+            'Легко наносится',
+            'Устойчива к стеканию с вертикальной поверхности',
+            'Стойкая к возникновению усадочных трещин',
+            'Стойкая к ударным воздействиям',
+            'Разнообразие фактур и эффектов',
+            'Экологически безопасна'
+        ],
         'paint': [
             'Быстрое высыхание',
             'Устойчивость к истиранию и влаге',
@@ -208,6 +218,159 @@ document.addEventListener('DOMContentLoaded', function() {
             'Без запаха',
             'Широкая цветовая гамма'
         ]
+    };
+    
+    // Детальные характеристики товаров по ID или названию
+    const productDetails = {
+        'Декоративная штукатурка': {
+            'Тип': 'Силикатно-силиконовая',
+            'Область применения': 'Для внутренних и наружных работ',
+            'Назначение': 'Для систем теплоизоляции фасадов на основе минеральной ваты и пенополистирола',
+            'Свойства': [
+                'Эластичная',
+                'Легко наносится',
+                'Устойчива к стеканию с вертикальной поверхности',
+                'Устойчивость к загрязнению – эффект самоочищения',
+                'Стойкость к ультрафиолетовым лучам',
+                'Высокая паропроницаемость',
+                'Устойчивость от грибка и плесени',
+                'Высокая гидрофобность – водоотталкивающий эффект',
+                'Стойкая к возникновению усадочных трещин',
+                'Атмосферо- и морозостойкая',
+                'Стойкая к ударным воздействиям'
+            ],
+            'Базовый цвет': 'Белый',
+            'Колеровка': 'Колеруется в цвета RAL',
+            'Состав': 'Акриловая дисперсия, водная дисперсия силикатов калия и сополимеров силиконов, минеральные наполнители, пигменты, функциональные и антисептические добавки',
+            'Плотность': '1,5-1,9 кг/дм3',
+            'Время до затирки': 'Определяется опытным путем и зависит от толщины слоя и температурно-влажностного режима окружающей среды',
+            'Вес нетто': '25 кг',
+            'Эффекты': [
+                'Короед',
+                'Сахара',
+                'Бриз',
+                'Файн'
+            ],
+            'Размер зерна': ['1мм-1,5мм', '1,5мм-2мм']
+        },
+        'Грунтовка Бетоноконтакт адгезионная': {
+            'Тип': 'Адгезионная грунтовка',
+            'Область применения': 'Для внутренних и наружных работ',
+            'Назначение': 'Для обработки плотных и слабовпитывающих влагу оснований: бетонные блоки, бетонные потолки, монолитный бетон, старые плиточные облицовки, влагостойкие плиты ГКЛ и ГВЛ',
+            'Свойства': [
+                'Улучшенная адгезия',
+                'Сверхпрочность и надежность основания',
+                'Антисептические добавки против плесени и грибков',
+                'Возможность колеровки',
+                'Зимняя версия морозостойкая (до 5 циклов замораживания/оттаивания)'
+            ],
+            'Основной цвет': 'Розовый (возможна колеровка в другие цвета)',
+            'Расход': '140-200 г/м² в зависимости от типа основания',
+            'Состав': 'Акриловая дисперсия, минеральный наполнитель, функциональные и антисептические добавки',
+            'Разбавитель': 'Вода',
+            'Время высыхания': '2-3 часа при температуре 20°С и влажности 55%',
+            'Варианты фасовки': [
+                {
+                    'вес': '15 кг',
+                    'цена': '1516 р',
+                    'текст': 'Ведро 15 кг - 1516 р'
+                },
+                {
+                    'вес': '25 кг',
+                    'цена': '2119 р',
+                    'текст': 'Ведро 25 кг - 2119 р'
+                }
+            ],
+            'Хранение': 'В фирменной упаковке в течение 12 месяцев от даты производства при температуре от +5°С до +30°С',
+            'Особенности': 'Свежая грунтовка легко удаляется водой, засохшие остатки - растворителем'
+        },
+        'Штукатурка декоративная акриловая': {
+            'Тип': 'Акриловая',
+            'Область применения': 'Для внутренних и наружных работ',
+            'Назначение': 'Для отделки по минеральным основаниям, цементной штукатурке, гипсокартону, бетону, ЦСП, асбестоцементным листам, ДСП и т.п.',
+            'Свойства': [
+                'Готовая к применению',
+                'Легкость в нанесении',
+                'Супер-эластичность',
+                'Устойчивость к деформациям',
+                'Отличная паропроницаемость',
+                'Устойчивость к атмосферным воздействиям',
+                'Морозостойкость',
+                'Стойкость к образованию трещин'
+            ],
+            'Базовый цвет': 'Белый',
+            'Колеровка': 'Допускается колеровка водными специальными колеровочными пастами',
+            'Состав': 'Водная дисперсия сополимеров с минеральными наполнителями и пигментами',
+            'Плотность': '1,5-1,9 кг/дм3',
+            'Время до затирки': 'Определяется опытным путем и зависит от толщины слоя и температурно-влажностного режима окружающей среды',
+            'Вес нетто': '25 кг',
+            'Эффекты': [
+                'Короед 1,5-2,0 мм',
+                'Короед Лайт 1,0-1,5 мм',
+                'Сахара 1,0-1,5 мм',
+                'Сахара Бархан 1,5-2,0 мм',
+                'Бриз 0,1-0,4 мм',
+                'Файн 0,5-1,0 мм'
+            ],
+            'Примечание': 'Не рекомендован для нанесения на гипсо- и известь-содержащие поверхности без специальной предварительной подготовки'
+        },
+        'Штукатурка фасадная декоративная': {
+            'Тип': 'Силикатно-силиконовая',
+            'Область применения': 'Для внутренних и наружных работ',
+            'Назначение': 'Для систем теплоизоляции фасадов на основе минеральной ваты и пенополистирола',
+            'Свойства': [
+                'Эластичная',
+                'Легко наносится',
+                'Устойчива к стеканию с вертикальной поверхности',
+                'Устойчивость к загрязнению – эффект самоочищения',
+                'Стойкость к ультрафиолетовым лучам',
+                'Высокая паропроницаемость',
+                'Устойчивость от грибка и плесени',
+                'Высокая гидрофобность – водоотталкивающий эффект',
+                'Стойкая к возникновению усадочных трещин',
+                'Атмосферо- и морозостойкая',
+                'Стойкая к ударным воздействиям'
+            ],
+            'Базовый цвет': 'Белый',
+            'Колеровка': 'Колеруется в цвета RAL',
+            'Состав': 'Акриловая дисперсия, водная дисперсия силикатов калия и сополимеров силиконов, минеральные наполнители, пигменты, функциональные и антисептические добавки',
+            'Плотность': '1,5-1,9 кг/дм3',
+            'Время до затирки': 'Определяется опытным путем и зависит от толщины слоя и температурно-влажностного режима окружающей среды',
+            'Вес нетто': '25 кг',
+            'Эффекты': [
+                'Короед',
+                'Сахара',
+                'Бриз',
+                'Файн'
+            ],
+            'Размер зерна': ['1мм-1,5мм', '1,5мм-2мм']
+        },
+        'Интерьерная декоративная штукатурка': {
+            'Тип': 'Акриловая',
+            'Область применения': 'Для внутренних работ',
+            'Назначение': 'Предназначена для устройства декоративно-защитного финишного слоя наносимого на ровные, прочные недеформирующиеся основания: цементные штукатурки и шпатлевки, бетон, кирпич, ГКЛ, ГВЛ, ЦСП и т.п.',
+            'Свойства': [
+                'Эластичная',
+                'Легко наносится',
+                'Устойчива к стеканию с вертикальной поверхности',
+                'Стойкая к возникновению усадочных трещин',
+                'Стойкая к ударным воздействиям'
+            ],
+            'Базовый цвет': 'Белый',
+            'Состав': 'Акриловая дисперсия, водная дисперсия силикатов калия и сополимеров силиконов, минеральные наполнители, пигменты, функциональные и антисептические добавки',
+            'Плотность': '1,5-1,9 кг/дм3',
+            'Время до затирки': 'Определяется опытным путем и зависит от толщины слоя и температурно-влажностного режима окружающей среды',
+            'Вес нетто': '25 кг',
+            'Эффекты': [
+                'Короед',
+                'Сахара',
+                'Сахара Бархан',
+                'Файн',
+                'Бриз'
+            ],
+            'Размер зерна': ['0,3мм-1мм', '1,5мм-2мм'],
+            'Примечание': 'Не рекомендована для нанесения на гипсо- и известь-содержащие поверхности без специальной предварительной подготовки'
+        }
     };
     
     // Получаем все кнопки "Подробнее"
@@ -219,7 +382,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Функция для обновления итоговой цены
     function updateTotalPrice(price, quantity) {
         const total = (price * quantity).toFixed(2);
-        orderTotalPrice.textContent = '$' + total;
+        orderTotalPrice.textContent = total + ' р';
     }
     
     // Открытие модального окна с подробной информацией при клике на кнопку "Подробнее"
@@ -257,6 +420,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 features = productFeatures.plaster;
             } else if (productCard.classList.contains('facade')) {
                 features = productFeatures.facade;
+            } else if (productCard.classList.contains('interior')) {
+                features = productFeatures.interior;
             } else if (productCard.classList.contains('paint')) {
                 features = productFeatures.paint;
             }
@@ -279,11 +444,177 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Заполняем особенности товара
             productDetailsFeatures.innerHTML = '';
-            features.forEach(feature => {
-                const li = document.createElement('li');
-                li.textContent = feature;
-                productDetailsFeatures.appendChild(li);
-            });
+            
+            // Проверяем, есть ли детальная информация для этого товара
+            if (productDetails[productTitle]) {
+                // Используем свойства из детальной информации вместо общих особенностей
+                const details = productDetails[productTitle];
+                
+                // Создаем список особенностей (без дублирования заголовка, т.к. он уже есть в HTML)
+                const featuresList = document.createElement('ul');
+                
+                // Используем свойства из детальной информации
+                if (details['Свойства'] && Array.isArray(details['Свойства'])) {
+                    details['Свойства'].forEach(feature => {
+                        const li = document.createElement('li');
+                        li.textContent = feature;
+                        featuresList.appendChild(li);
+                    });
+                    productDetailsFeatures.appendChild(featuresList);
+                }
+            } else {
+                // Если нет детальной информации, используем стандартные особенности из productFeatures
+                features.forEach(feature => {
+                    const li = document.createElement('li');
+                    li.textContent = feature;
+                    productDetailsFeatures.appendChild(li);
+                });
+            }
+            
+            // Добавляем подробные характеристики, если они есть
+            if (productDetails[productTitle]) {
+                const details = productDetails[productTitle];
+                
+                // Добавляем заголовок раздела характеристик
+                const specsTitle = document.createElement('h3');
+                specsTitle.textContent = 'Технические характеристики';
+                specsTitle.classList.add('specs-title');
+                productDetailsFeatures.appendChild(specsTitle);
+                
+                const specsList = document.createElement('ul');
+                specsList.className = 'product-specs-list';
+                
+                // Добавляем основные характеристики
+                for (const [key, value] of Object.entries(details)) {
+                    // Проверяем, что ключ не относится к свойствам, которые мы отображаем отдельно
+                    if (key !== 'Свойства' && key !== 'Эффекты' && (!Array.isArray(value) || key === 'Размер зерна')) {
+                        const li = document.createElement('li');
+                        li.innerHTML = `<strong>${key}:</strong> `;
+                        
+                        if (Array.isArray(value)) {
+                            // Для массивов создаем подсписок
+                            const ul = document.createElement('ul');
+                            ul.style.marginLeft = '20px';
+                            ul.style.marginTop = '5px';
+                            
+                            value.forEach(item => {
+                                const subLi = document.createElement('li');
+                                subLi.textContent = item;
+                                ul.appendChild(subLi);
+                            });
+                            
+                            li.appendChild(ul);
+                        } else {
+                            li.innerHTML += value;
+                        }
+                        
+                        specsList.appendChild(li);
+                    }
+                }
+                
+                // Добавляем отображение цены, если она указана
+                if (details['Цена']) {
+                    // Обновляем отображаемую цену в верхней части модального окна
+                    productDetailsPrice.textContent = details['Цена'];
+                }
+                
+                // Добавляем эффекты в отдельном разделе
+                if (details['Эффекты'] && details['Эффекты'].length > 0) {
+                    const effectsTitle = document.createElement('h3');
+                    effectsTitle.textContent = 'Доступные эффекты';
+                    effectsTitle.style.marginTop = '30px';
+                    effectsTitle.classList.add('effects-title');
+                    productDetailsFeatures.appendChild(effectsTitle);
+                    
+                    const effectsList = document.createElement('ul');
+                    
+                    details['Эффекты'].forEach(effect => {
+                        const li = document.createElement('li');
+                        li.textContent = effect;
+                        effectsList.appendChild(li);
+                    });
+                    
+                    productDetailsFeatures.appendChild(effectsList);
+                }
+                
+                // Добавляем размеры зерна
+                if (details['Размер зерна']) {
+                    const li = document.createElement('li');
+                    li.innerHTML = '<strong>Размер зерна:</strong> ' + details['Размер зерна'].join(', ');
+                    specsList.appendChild(li);
+                }
+                
+                // Добавляем варианты фасовки как отдельный элемент, если они есть
+                if (details['Варианты фасовки'] && Array.isArray(details['Варианты фасовки'])) {
+                    const packagingTitle = document.createElement('h3');
+                    packagingTitle.textContent = 'Варианты фасовки';
+                    packagingTitle.classList.add('effects-title');
+                    packagingTitle.style.marginTop = '20px';
+                    productDetailsFeatures.appendChild(packagingTitle);
+                    
+                    const packagingList = document.createElement('ul');
+                    packagingList.className = 'product-packaging-list';
+                    
+                    // Первый элемент выбираем по умолчанию для начального отображения цены
+                    let firstItemSelected = false;
+                    
+                    details['Варианты фасовки'].forEach((packaging, index) => {
+                        const li = document.createElement('li');
+                        
+                        // Проверяем, старый формат или новый
+                        if (typeof packaging === 'string') {
+                            // Старый формат (строка)
+                            li.textContent = packaging;
+                            
+                            // Извлекаем цену из строки
+                            const priceMatch = packaging.match(/(\d+)\s*р\/банка/);
+                            if (priceMatch && priceMatch[1] && index === 0 && !firstItemSelected) {
+                                productDetailsPrice.textContent = priceMatch[1] + '₽';
+                                li.classList.add('selected');
+                                firstItemSelected = true;
+                            }
+                        } else {
+                            // Новый формат (объект)
+                            li.textContent = packaging.текст;
+                            
+                            // Выбираем первый элемент по умолчанию
+                            if (index === 0 && !firstItemSelected) {
+                                productDetailsPrice.textContent = packaging.цена;
+                                li.classList.add('selected');
+                                firstItemSelected = true;
+                            }
+                        }
+                        
+                        // Добавляем возможность выбора варианта фасовки
+                        li.style.cursor = 'pointer';
+                        li.addEventListener('click', function() {
+                            // Выделяем выбранный вариант
+                            packagingList.querySelectorAll('li').forEach(item => {
+                                item.classList.remove('selected');
+                            });
+                            li.classList.add('selected');
+                            
+                            // Обновляем отображаемую цену
+                            if (typeof packaging === 'string') {
+                                // Старый формат (строка)
+                                const priceMatch = packaging.match(/(\d+)\s*р\/банка/);
+                                if (priceMatch && priceMatch[1]) {
+                                    productDetailsPrice.textContent = priceMatch[1] + '₽';
+                                }
+                            } else {
+                                // Новый формат (объект)
+                                productDetailsPrice.textContent = packaging.цена;
+                            }
+                        });
+                        
+                        packagingList.appendChild(li);
+                    });
+                    
+                    productDetailsFeatures.appendChild(packagingList);
+                }
+                
+                productDetailsFeatures.appendChild(specsList);
+            }
             
             // Показываем модальное окно
             productDetailsModal.style.display = 'flex';
@@ -297,10 +628,73 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Заполняем данные товара в модальном окне заказа
                 orderProductImage.src = productImage;
                 orderProductTitle.textContent = productTitle;
-                orderProductPrice.textContent = productPrice;
+                orderProductPrice.textContent = productDetailsPrice.textContent;
                 
                 // Устанавливаем начальное значение итоговой цены
-                const priceValue = parseFloat(productPrice.replace('$', ''));
+                const priceText = productDetailsPrice.textContent;
+                // Извлекаем числовое значение цены, независимо от валюты
+                const priceValue = parseFloat(priceText.replace(/[^\d.]/g, ''));
+                
+                // Проверяем, есть ли у товара варианты фасовки
+                const packagingOptionsContainer = document.querySelector('.form-packaging-options');
+                if (packagingOptionsContainer) {
+                    // Удаляем предыдущие варианты фасовки, если они были
+                    packagingOptionsContainer.remove();
+                }
+                
+                // Если это товар "Грунтовка Бетоноконтакт", добавляем селектор выбора фасовки
+                if (productTitle === "Грунтовка Бетоноконтакт адгезионная" && productDetails[productTitle] && productDetails[productTitle]['Варианты фасовки']) {
+                    // Создаем контейнер для вариантов фасовки
+                    const packagingContainer = document.createElement('div');
+                    packagingContainer.className = 'form-group form-packaging-options';
+                    
+                    // Создаем заголовок
+                    const packagingLabel = document.createElement('label');
+                    packagingLabel.for = 'orderPackaging';
+                    packagingLabel.textContent = 'Выберите фасовку';
+                    
+                    // Создаем селектор
+                    const packagingSelect = document.createElement('select');
+                    packagingSelect.id = 'orderPackaging';
+                    packagingSelect.name = 'orderPackaging';
+                    
+                    // Добавляем варианты фасовки
+                    productDetails[productTitle]['Варианты фасовки'].forEach((packaging, index) => {
+                        const option = document.createElement('option');
+                        option.value = packaging.вес;
+                        option.textContent = packaging.текст;
+                        option.dataset.price = packaging.цена;
+                        packagingSelect.appendChild(option);
+                        
+                        // Устанавливаем выбранный вариант, если это текущая отображаемая цена
+                        if (productDetailsPrice.textContent === packaging.цена) {
+                            packagingSelect.selectedIndex = index;
+                        }
+                    });
+                    
+                    // Обработчик изменения выбранной фасовки
+                    packagingSelect.addEventListener('change', function() {
+                        const selectedOption = this.options[this.selectedIndex];
+                        const newPrice = selectedOption.dataset.price;
+                        
+                        // Обновляем отображаемую цену
+                        orderProductPrice.textContent = newPrice;
+                        
+                        // Обновляем итоговую сумму
+                        const priceValue = parseFloat(newPrice.replace(/[^\d.]/g, ''));
+                        const quantity = parseInt(orderQuantityInput.value) || 1;
+                        updateTotalPrice(priceValue, quantity);
+                    });
+                    
+                    // Добавляем элементы в контейнер
+                    packagingContainer.appendChild(packagingLabel);
+                    packagingContainer.appendChild(packagingSelect);
+                    
+                    // Вставляем контейнер с вариантами фасовки перед полем количества
+                    const quantityGroup = document.querySelector('#orderQuantity').closest('.form-group');
+                    quantityGroup.parentNode.insertBefore(packagingContainer, quantityGroup);
+                }
+                
                 updateTotalPrice(priceValue, 1);
                 
                 // Показываем модальное окно заказа
@@ -309,24 +703,59 @@ document.addEventListener('DOMContentLoaded', function() {
                 // Обновляем итоговую сумму при изменении количества
                 orderQuantityInput.onchange = function() {
                     const quantity = parseInt(this.value) || 1;
-                    updateTotalPrice(priceValue, quantity);
+                    
+                    // Если есть селектор фасовки, используем цену из выбранного варианта
+                    const packagingSelect = document.getElementById('orderPackaging');
+                    let currentPriceValue = priceValue;
+                    
+                    if (packagingSelect) {
+                        const selectedOption = packagingSelect.options[packagingSelect.selectedIndex];
+                        const selectedPrice = selectedOption.dataset.price;
+                        currentPriceValue = parseFloat(selectedPrice.replace(/[^\d.]/g, ''));
+                    }
+                    
+                    updateTotalPrice(currentPriceValue, quantity);
                 };
                 
                 orderQuantityInput.oninput = function() {
                     const quantity = parseInt(this.value) || 1;
-                    updateTotalPrice(priceValue, quantity);
+                    
+                    // Если есть селектор фасовки, используем цену из выбранного варианта
+                    const packagingSelect = document.getElementById('orderPackaging');
+                    let currentPriceValue = priceValue;
+                    
+                    if (packagingSelect) {
+                        const selectedOption = packagingSelect.options[packagingSelect.selectedIndex];
+                        const selectedPrice = selectedOption.dataset.price;
+                        currentPriceValue = parseFloat(selectedPrice.replace(/[^\d.]/g, ''));
+                    }
+                    
+                    updateTotalPrice(currentPriceValue, quantity);
                 };
             };
             
             // Добавляем обработчик для кнопки "Скачать тех. лист" в модальном окне
             productDetailsDownloadBtn.onclick = function() {
-                // Использование реального файла из папки files
-                const fileUrl = 'files/artfasadsilicatesilicone.pdf';
+                // Использование реального файла из папки files в зависимости от товара
+                let fileUrl = '';
+                
+                if (productTitle.includes('фасадная')) {
+                    fileUrl = 'files/artfasadsilicatesilicone.pdf';
+                } else if (productTitle.includes('Интерьерная')) {
+                    fileUrl = 'files/artinterior.pdf';
+                } else if (productTitle.includes('акриловая')) {
+                    fileUrl = 'files/artfasad.pdf';
+                } else if (productTitle.includes('Бетоноконтакт')) {
+                    fileUrl = 'files/betoncontact.pdf';
+                } else {
+                    // Если товар неизвестен, используем дефолтный файл
+                    fileUrl = 'files/artfasadsilicatesilicone.pdf';
+                }
                 
                 // Создаем временную ссылку для скачивания
                 const downloadLink = document.createElement('a');
                 downloadLink.href = fileUrl;
-                downloadLink.download = 'Технический_лист_фасадная_штукатурка.pdf';
+                downloadLink.download = productTitle.toLowerCase().replace(/\s+/g, '_') + '_тех_лист.pdf';
                 downloadLink.target = '_blank';
                 document.body.appendChild(downloadLink);
                 
@@ -341,17 +770,36 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    // Закрытие модального окна с подробной информацией при клике на крестик
-    productDetailsCloseBtn.addEventListener('click', function() {
+    // Функция для закрытия модального окна с подробной информацией
+    function closeProductDetailsModal() {
         productDetailsModal.style.display = 'none';
         document.body.style.overflow = '';
+    }
+    
+    // Функция для закрытия модального окна заказа
+    function closeOrderModal() {
+        orderModal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+    
+    // Закрытие модального окна с подробной информацией при клике на крестик
+    productDetailsCloseBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeProductDetailsModal();
+    });
+    
+    // Добавляем дополнительный обработчик mousedown для повышения надежности закрытия
+    productDetailsCloseBtn.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeProductDetailsModal();
     });
     
     // Закрытие модального окна с подробной информацией при клике вне его содержимого
     productDetailsModal.addEventListener('click', function(event) {
         if (event.target === productDetailsModal) {
-            productDetailsModal.style.display = 'none';
-            document.body.style.overflow = '';
+            closeProductDetailsModal();
         }
     });
     
@@ -362,12 +810,69 @@ document.addEventListener('DOMContentLoaded', function() {
             const productImage = productCard.querySelector('.product-image').src;
             const productTitle = productCard.querySelector('.product-title').textContent;
             const productPrice = productCard.querySelector('.product-price').textContent;
-            const priceValue = parseFloat(productPrice.replace('$', ''));
+            
+            // Извлекаем числовое значение цены, независимо от валюты
+            const priceValue = parseFloat(productPrice.replace(/[^\d.]/g, ''));
             
             // Заполняем данные товара в модальном окне
             orderProductImage.src = productImage;
             orderProductTitle.textContent = productTitle;
             orderProductPrice.textContent = productPrice;
+            
+            // Проверяем, есть ли у товара варианты фасовки
+            const packagingOptionsContainer = document.querySelector('.form-packaging-options');
+            if (packagingOptionsContainer) {
+                // Удаляем предыдущие варианты фасовки, если они были
+                packagingOptionsContainer.remove();
+            }
+            
+            // Если это товар "Грунтовка Бетоноконтакт", добавляем селектор выбора фасовки
+            if (productTitle === "Грунтовка Бетоноконтакт адгезионная" && productDetails[productTitle] && productDetails[productTitle]['Варианты фасовки']) {
+                // Создаем контейнер для вариантов фасовки
+                const packagingContainer = document.createElement('div');
+                packagingContainer.className = 'form-group form-packaging-options';
+                
+                // Создаем заголовок
+                const packagingLabel = document.createElement('label');
+                packagingLabel.for = 'orderPackaging';
+                packagingLabel.textContent = 'Выберите фасовку';
+                
+                // Создаем селектор
+                const packagingSelect = document.createElement('select');
+                packagingSelect.id = 'orderPackaging';
+                packagingSelect.name = 'orderPackaging';
+                
+                // Добавляем варианты фасовки
+                productDetails[productTitle]['Варианты фасовки'].forEach((packaging, index) => {
+                    const option = document.createElement('option');
+                    option.value = packaging.вес;
+                    option.textContent = packaging.текст;
+                    option.dataset.price = packaging.цена;
+                    packagingSelect.appendChild(option);
+                });
+                
+                // Обработчик изменения выбранной фасовки
+                packagingSelect.addEventListener('change', function() {
+                    const selectedOption = this.options[this.selectedIndex];
+                    const newPrice = selectedOption.dataset.price;
+                    
+                    // Обновляем отображаемую цену
+                    orderProductPrice.textContent = newPrice;
+                    
+                    // Обновляем итоговую сумму
+                    const priceValue = parseFloat(newPrice.replace(/[^\d.]/g, ''));
+                    const quantity = parseInt(orderQuantityInput.value) || 1;
+                    updateTotalPrice(priceValue, quantity);
+                });
+                
+                // Добавляем элементы в контейнер
+                packagingContainer.appendChild(packagingLabel);
+                packagingContainer.appendChild(packagingSelect);
+                
+                // Вставляем контейнер с вариантами фасовки перед полем количества
+                const quantityGroup = document.querySelector('#orderQuantity').closest('.form-group');
+                quantityGroup.parentNode.insertBefore(packagingContainer, quantityGroup);
+            }
             
             // Устанавливаем начальное значение итоговой цены
             updateTotalPrice(priceValue, 1);
@@ -379,40 +884,67 @@ document.addEventListener('DOMContentLoaded', function() {
             // Обновляем итоговую сумму при изменении количества
             orderQuantityInput.onchange = function() {
                 const quantity = parseInt(this.value) || 1;
-                updateTotalPrice(priceValue, quantity);
+                
+                // Если есть селектор фасовки, используем цену из выбранного варианта
+                const packagingSelect = document.getElementById('orderPackaging');
+                let currentPriceValue = priceValue;
+                
+                if (packagingSelect) {
+                    const selectedOption = packagingSelect.options[packagingSelect.selectedIndex];
+                    const selectedPrice = selectedOption.dataset.price;
+                    currentPriceValue = parseFloat(selectedPrice.replace(/[^\d.]/g, ''));
+                }
+                
+                updateTotalPrice(currentPriceValue, quantity);
             };
             
             orderQuantityInput.oninput = function() {
                 const quantity = parseInt(this.value) || 1;
-                updateTotalPrice(priceValue, quantity);
+                
+                // Если есть селектор фасовки, используем цену из выбранного варианта
+                const packagingSelect = document.getElementById('orderPackaging');
+                let currentPriceValue = priceValue;
+                
+                if (packagingSelect) {
+                    const selectedOption = packagingSelect.options[packagingSelect.selectedIndex];
+                    const selectedPrice = selectedOption.dataset.price;
+                    currentPriceValue = parseFloat(selectedPrice.replace(/[^\d.]/g, ''));
+                }
+                
+                updateTotalPrice(currentPriceValue, quantity);
             };
         });
     });
     
     // Закрытие модального окна при клике на крестик
-    orderCloseBtn.addEventListener('click', function() {
-        orderModal.style.display = 'none';
-        document.body.style.overflow = '';
+    orderCloseBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeOrderModal();
+    });
+    
+    // Добавляем дополнительный обработчик mousedown для повышения надежности закрытия
+    orderCloseBtn.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeOrderModal();
     });
     
     // Закрытие модального окна при клике вне его содержимого
     orderModal.addEventListener('click', function(event) {
         if (event.target === orderModal) {
-            orderModal.style.display = 'none';
-            document.body.style.overflow = '';
+            closeOrderModal();
         }
     });
     
-    // Закрытие модального окна по клавише Escape
+    // Закрытие модальных окон по клавише Escape
     document.addEventListener('keydown', function(event) {
         if (event.key === 'Escape') {
             if (orderModal.style.display === 'flex') {
-                orderModal.style.display = 'none';
-                document.body.style.overflow = '';
+                closeOrderModal();
             }
             if (productDetailsModal.style.display === 'flex') {
-                productDetailsModal.style.display = 'none';
-                document.body.style.overflow = '';
+                closeProductDetailsModal();
             }
         }
     });
@@ -433,12 +965,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const quantity = document.getElementById('orderQuantity').value;
         const comment = document.getElementById('orderComment').value;
         
+        // Проверяем, есть ли выбор фасовки
+        let packagingInfo = '';
+        const packagingSelect = document.getElementById('orderPackaging');
+        if (packagingSelect) {
+            packagingInfo = `<b>Выбранная фасовка:</b> ${packagingSelect.options[packagingSelect.selectedIndex].textContent}\n`;
+        }
+        
         // Формируем сообщение для отправки в Telegram
         const telegramMessage = `
 <b>Новый заказ с сайта</b>
 <b>Товар:</b> ${productTitle}
 <b>Цена:</b> ${productPrice}
-<b>Количество:</b> ${quantity}
+${packagingInfo}<b>Количество:</b> ${quantity}
 <b>Итого:</b> ${totalPrice}
 
 <b>Информация о клиенте:</b>
@@ -766,3 +1305,28 @@ function reportWebVitals() {
 // Вызов функций оптимизации
 handleCanonicalUrl();
 reportWebVitals();
+
+// Фильтрация продуктов по категории
+const filterCategoryBtns = document.querySelectorAll('.filter-btn[data-filter]');
+const productCards = document.querySelectorAll('.product-card');
+
+filterCategoryBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+        // Сначала удаляем активный класс со всех кнопок
+        filterCategoryBtns.forEach(b => b.classList.remove('active'));
+        // Добавляем активный класс текущей кнопке
+        btn.classList.add('active');
+
+        const filterValue = btn.getAttribute('data-filter');
+
+        productCards.forEach(card => {
+            if (filterValue === 'all') {
+                card.classList.remove('hidden');
+            } else if (card.classList.contains(filterValue)) {
+                card.classList.remove('hidden');
+            } else {
+                card.classList.add('hidden');
+            }
+        });
+    });
+});

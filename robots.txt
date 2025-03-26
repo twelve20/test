@@ -18,16 +18,14 @@ Allow: /blog/
 
 # Запрет на индексацию служебных директорий
 Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /temp/
 Disallow: /cgi-bin/
+Disallow: /scripts/
 Disallow: /wp-admin/
 Disallow: /wp-includes/
-Disallow: /wp-content/plugins/
-Disallow: /wp-content/themes/
-Disallow: /order-modal/
-Disallow: /tmp/
-Disallow: /test/
-Disallow: /dev/
-Disallow: /backup/
+Disallow: /api/
 Disallow: /*.php$
 Disallow: /*.js$
 Disallow: /*.css$
@@ -41,30 +39,25 @@ Disallow: /search/
 Disallow: /*?s=*
 Disallow: /*&s=*
 Disallow: /*print=*
-Disallow: /*utm_source=*
-Disallow: /*utm_medium=*
-Disallow: /*utm_campaign=*
+Disallow: /*utm_*
+Disallow: /*openstat=
+Disallow: /*from=
+Disallow: /*yclid=
 
 # Правила для Яндекс
 User-agent: Yandex
 Allow: /
 Allow: /sitemap.xml
-Disallow: /admin/
-Disallow: /cgi-bin/
-Disallow: /tmp/
-Disallow: /*.pdf$
-Disallow: /*.doc$
-Disallow: /*.docx$
-Disallow: /*.xls$
-Disallow: /*.xlsx$
-Disallow: /search?*
-Clean-param: utm_source&utm_medium&utm_campaign
-Clean-param: yclid
+Allow: /*.js$
+Allow: /*.css$
+Clean-param: utm_source&utm_medium&utm_campaign&utm_content&utm_term
 
 # Правила для Google
 User-agent: Googlebot
 Allow: /
 Allow: /sitemap.xml
+Allow: /*.js$
+Allow: /*.css$
 Disallow: /admin/
 Disallow: /cgi-bin/
 Disallow: /tmp/
@@ -93,10 +86,10 @@ User-agent: SemrushBot
 Disallow: /
 
 # Карта сайта
-Sitemap: https://colorvivo.ru/sitemap.xml
+Sitemap: https://mega-decorative.ru/sitemap.xml
 
 # Основное зеркало сайта
-Host: colorvivo.ru 
+Host: https://mega-decorative.ru
 
 # Время индексации для Яндекса в секундах (задержка между запросами)
 Crawl-delay: 3 
